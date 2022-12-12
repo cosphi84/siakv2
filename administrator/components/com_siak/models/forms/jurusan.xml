@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fieldset name="frmJurusan">
+        <field 
+            name        = "title"
+            type        = "text"
+            label       = "COM_SIAK_JURUSAN_FIELD_TITLE_LABEL"
+            description = ""
+            required    = "true"
+            class       = "input input-small"
+            autofocus   = "true"
+        />
+
+        <field 
+            name        = "alias"
+            type        = "text"
+            label       = "COM_SIAK_FIELD_ALIAS_LABEL"
+            description = ""
+            required    = "true"
+            class       = "input input-large"            
+        />
+
+        <field 
+            name        = "prodi"
+            type        = "prodis"
+            label       = "COM_SIAK_PRODI_FIELD_TITLE_LABEL"
+            description = ""
+            required    = "true"
+            class       = "input input-medium"
+        >
+         <option value="">JGLOBAL_SELECT_AN_OPTION</option>
+         </field>  
+
+        <field 
+            name        = "kajur"
+            type        = "user"
+            label       = "COM_SIAK_JURUSAN_FIELD_KAJUR_LABEL"
+            description = ""
+            required    = "true"
+            class       = "input input-medium"
+        />
+                      
+    </fieldset>
+</form>
+

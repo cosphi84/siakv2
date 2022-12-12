@@ -1,0 +1,1 @@
+ALTER TABLE `#__siak_ta` ADD `tanggal_lulus` DATE NOT NULL DEFAULT '0000-00-00' AFTER `tanggal_seminar`;

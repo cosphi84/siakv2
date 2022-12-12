@@ -1,0 +1,2 @@
+ALTER TABLE `#__siak_nilai` MODIFY `state` TINYINT NOT NULL DEFAULT 1;
+ALTER TABLE `#__siak_nilai` ADD `display` TINYINT(2) UNSIGNED NOT NULL DEFAULT 0 AFTER `state`;

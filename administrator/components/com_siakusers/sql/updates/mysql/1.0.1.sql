@@ -1,0 +1,1 @@
+ALTER TABLE `#__siak_user` ADD `status` TINYINT NOT NULL DEFAULT 1 AFTER `angkatan`;

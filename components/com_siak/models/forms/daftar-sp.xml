@@ -1,0 +1,92 @@
+<?xml version = "1.0" encoding="utf-8"?>
+<form>
+    <fieldset 
+        name        = "frmDaftarSP"
+        description = "COM_SIAK_FRM_DAFTAR_SP_DESCRIPTION"
+    >
+        <field 
+            name        = "mahasiswa"
+            type        = "text"
+            readonly    = "true"
+            label       = "COM_SIAK_FIELD_NAMA_TITLE"
+            description = ""
+            class       = "input input-medium"
+        />
+
+        <field 
+            name        = "npm"
+            type        = "text"
+            readonly    = "true"
+            label       = "COM_SIAK_FIELD_NPM_TITLE"
+            description = ""
+            class       = "input input-medium"
+        />
+
+        <field
+            name        = "semester"
+            type        = "text"
+            label       = "COM_SIAK_FIELD_SEMESTER_LABEL"
+            description = ""
+            class       = "input input-medium"
+            readonly    = "true"
+        >
+            <option value = "">COM_SIAK_SELECT_SEMESTER</option>
+        </field>
+
+        <field 
+            name        = "tahun_ajaran"
+            type        = "ta"
+            label       = "COM_SIAK_TA_TITLE_LABEL"
+            description = ""
+            class       = "input input-small"
+            readonly    = "true"
+        />
+
+        
+
+        <field 
+            name        = "matakuliah"
+            type        = "text"
+            label       = "COM_SIAK_FIELD_MATAKULIAH_TITLE"
+            description = ""
+            readonly    = "true"
+            class       = "input input-large"
+        />
+
+        <field
+            name        = "kodemk"
+            type        = "text"
+            label       = "COM_SIAK_KODE_MK_TITLE"
+            description = ""
+            readonly    = "true"
+            class       = "input input-medium"
+        />
+
+        <field
+            name        = "nilai_akhir"
+            type        = "text"
+            label       = "COM_SIAK_NILAI_AKHIR_LABEL"
+            description = ""
+            readonly    = "true"
+            class       = "input input-small"
+        />
+
+        <field
+            name        = "nilai_angka"
+            type        = "text"
+            label       = "COM_SIAK_NILAI_HURUF_MUTU_LABEL"
+            description = ""
+            readonly    = "true"
+            class       = "input input-small"
+        />
+
+        <field
+            name        = "nilai_mutu"
+            type        = "text"
+            label       = "COM_SIAK_NILAI_ANGKA_MUTU_LABEL"
+            description = ""
+            readonly    = "true"
+            class       = "input input-small"
+        />
+    </fieldset>
+</form>

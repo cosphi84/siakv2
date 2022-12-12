@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fieldset name="frmMatkul">
+        <field 
+            name        = "title"
+            type        = "text"
+            label       = "COM_SIAK_MATKUL_FIELD_KODE_LABEL"
+            description = ""
+            required    = "true"
+            class       = "input input-small"
+            autofocus   = "true"
+        />
+
+        <field 
+            name        = "alias"
+            type        = "text"
+            label       = "COM_SIAK_MATKUL_FIELD_NAMA_LABEL"
+            description = ""
+            required    = "true"
+            class       = "input input-xlarge"
+        />
+
+        <field 
+            name        = "sks"
+            type        = "number"
+            label       = "COM_SIAK_MATKUL_FIELD_SKS_LABEL"
+            description = ""
+            required    = "true"
+            class       = "input input-small"
+            min         = "0"
+            max         = "6"
+        />
+
+        <field 
+            name        = "type"
+            type        = "jenismk"
+            label       = "COM_SIAK_MATKUL_FIELD_JENIS_MK_LABEL"
+            description = ""
+            required    = "true"
+            class       = "input input-large"
+        >
+        <option value="">JGLOBAL_SELECT_AN_OPTION</option>
+        </field>
+
+        <field 
+            name        = "prodi"
+            type        = "prodis"
+            label       = "COM_SIAK_PRODI_FIELD_TITLE_LABEL"
+            description = ""
+            required    = "true"
+            class       = "input input-large"
+        >
+        <option value="">JGLOBAL_SELECT_AN_OPTION</option>
+        </field>
+        
+        <field 
+            name        = "jurusan"
+            type        = "jurusanstatis"
+            label       = "COM_SIAK_JURUSAN_FIELD_TITLE_LABEL"
+            description = ""
+            required    = "true"
+            class       = "input input-large"
+        >
+        <option value="">JGLOBAL_SELECT_AN_OPTION</option>
+        </field>
+        
+        <field 
+            name        = "uang_mk"
+            type        = "number"
+            label       = "COM_SIAK_MATKUL_FIELD_UANG_MK_LABEL"
+            description = ""
+            required    = "true"
+            class       = "input input-large"
+            min         = "0"
+        />   
+
+        <field 
+            name        = "state"
+            type        = "radio"
+            label       = "COM_SIAK_GLOBAL_STATE_PUBLISHED"
+            description = ""
+            class       = "btn-group btn-group-yesno"
+            default     = '1'
+        >
+        <option value="0">JNO</option>
+        <option value="1">JYES</option>
+        </field>    
+        
+    </fieldset>
+</form>
+

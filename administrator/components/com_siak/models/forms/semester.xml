@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fieldset name="frmSemester">
+        <field  
+            name        = "title"
+            type        = "text"
+            label       = "COM_SIAK_SEMESTER_FIELD_TITLE_LABEL"
+            class       = "input input-medium"
+            hint        = "Semester x"
+            required    = "true"
+            autofocus   = "true"
+        />
+
+        <field  
+            name        = "alias"
+            type        = "number"
+            label       = "COM_SIAK_SEMESTER_FIELD_SEM_NUMBER_LABEL"
+            min         = "1"
+            max         = "10"
+            class       = "input input-small"
+            required    = "true"
+        />
+
+        <field 
+            name        = "uangSKS"
+            type        = "number"
+            min         = "10000"
+            label       = "COM_SIAK_SEMESTER_FIELD_UANG_SKS_LABEL"
+            class       = "input input-medium"
+            required    = "true"
+            hint        = "50000"
+        />
+
+        <field
+            name        = "uangSPP"
+            type        = "number"
+            label       = "COM_SIAK_SEMESTER_FIELD_UANG_SPP_LABEL"
+            min         = "1000000"
+            hint        = "1000000"
+            class       = "input input-medium"
+            required    = "true"
+        />
+
+        <field 
+            name        = "prodi"
+            type        = "prodis"
+            label       = "COM_SIAK_PRODI_FIELD_TITLE_LABEL"
+            description = ""
+            required    = "true"
+            class       = "input input-medium"
+        >
+        <option value="">JGLOBAL_SELECT_AN_OPTION</option>
+        </field>
+
+        <field 
+            name        = "jurusan"
+            type        = "jurusanstatis"
+            label       = "COM_SIAK_JURUSAN_FIELD_TITLE_LABEL"
+            description = ""
+            required    = "true"
+            class       = "input input-medium"
+        >
+        <option value="">JGLOBAL_SELECT_AN_OPTION</option>
+        </field>
+
+        <field 
+            name        = "kelas"
+            type        = "kelas"
+            label       = "COM_SIAK_KELAS_FIELD_TITLE_LABEL"
+            description = ""
+            class       = "input input-medium"
+        >
+        <option value="">JGLOBAL_SELECT_AN_OPTION</option>
+        </field>
+
+    </fieldset>
+</form>

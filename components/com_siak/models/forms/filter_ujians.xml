@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fields name            = "filter"
+            addfieldpath    = "/administrator/components/com_siak/models/fields" >
+
+        <field 
+            name            = "search"
+            type            = "text"
+            label           = "COM_SIAK_FILTER_SEARCH_LABEL"
+            description     = ""
+            hint            = ""
+        />
+
+        <field
+            name            = "prodi"
+            type            = "prodis"
+            label           = "COM_SIAK_PRODI_TITLE_LABEL"
+            description     = ""
+            class           = "input input-"
+            onchange        = "this.form.submit();"
+        >
+        <option value="">COM_SIAK_PRODI_TITLE_LABEL</option>
+        </field>
+
+        <field
+            name            = "jurusan"
+            type            = "jurusanstatis"
+            label           = "COM_SIAK_JURUSAN_TITLE_LABEL"
+            description     = ""
+            class           = "input input-"
+            onchange        = "this.form.submit();"
+        >
+        <option value="">COM_SIAK_JURUSAN_TITLE_LABEL</option>
+        </field>
+
+
+        <field
+            name            = "kelas"
+            type            = "kelas"
+            label           = "COM_SIAK_KELAS_TITLE_LABEL"
+            description     = ""
+            class           = "input input-"
+            onchange        = "this.form.submit();"
+        >
+        <option value="">COM_SIAK_SELECT_KELAS</option>
+        </field>
+
+        <field
+            name            = "semester"
+            type            = "semesterdinamis"
+            label           = "COM_SIAK_FIELD_SEMESTER_LABEL"
+            description     = ""
+            class           = "input input-"
+            onchange        = "this.form.submit();"
+        >
+        <option value="">COM_SIAK_FIELD_SEMESTER_LABEL</option>
+        </field>
+    </fields>
+    <fields name="list">
+        <field 
+            name            = "limit"
+            type            = "limitbox"
+            label           = "COM_CONTENT_LIST_LIMIT"
+			description     = "COM_CONTENT_LIST_LIMIT_DESC"
+			class           = "input-medium"
+			default         = "5"
+			onchange        = "this.form.submit();"
+        />
+    </fields>
+</form> 

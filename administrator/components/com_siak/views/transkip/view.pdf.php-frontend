@@ -1,0 +1,261 @@
+<?php
+
+defined('_JEXEC') or exit;
+use Joomla\CMS\Date\Date;
+use Joomla\CMS\HTML\HTMLHelper;
+
+jimport('tcpdf.tcpdf');
+JLoader::register('MahasiswaHelper', JPATH_COMPONENT_ADMINISTRATOR.'/helpers/mahasiswa.php');
+JLoader::register('TaHelper', JPATH_COMPONENT_ADMINISTRATOR.'/helpers/ta.php');
+
+class SiakViewTranskip extends JViewLegacy
+{
+    public function display($tpl = null)
+    {
+        // load Joomla Factory Class
+        $app = JFactory::getApplication();
+        // Get current user
+        $user = JFactory::getUser();
+
+        // make sure we've TCPDF class Library
+        if (!class_exists('TCPDF')) {
+            $app->enqueueMessage(JText::sprintf('COM_SIAK_ERROR_LIBRARY_NOT_FOUND', 'TCPDF'), 'error');
+            $app->redirect(JRoute::_('index.php?option=com_siak&view=transkip'));
+
+            return false;
+        }
+
+        // Load transkip data
+        $nilai = $this->get('Item');
+        $state = $this->get('State');
+        $errors = $this->get('Errors');
+        $params = $state->params;
+
+        ksort($nilai['nilai']);
+
+        $sumMK = count($nilai['nilai']);
+        if ($sumMK % 2) { // Jika jumlah MK ganjil
+            $tabelKiri = ($sumMK / 2) + 1;
+        } else {
+            $tabelKiri = ($sumMK / 2);
+        }
+
+        if ($sumMK > 0) {
+            $mhs = $nilai['nilai'][0]->user_id;
+            $dataMahasiswa = MahasiswaHelper::getData($mhs);
+            $mahasiswa = JFactory::getUser($mhs);
+            $namaFilePDF = 'TranskipNilai'.$mahasiswa->username.'.pdf';
+            $ta = TaHelpers::getTA($mhs);
+        } else {
+            $errors[] = 'Data tidak lengkap!';
+        }
+
+        // Error handler
+        if (count($errors) > 0) {
+            throw new Exception(implode('<br \>', $errors), 500);
+
+            return false;
+        }
+
+        $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
+        // set document information
+        $pdf->SetCreator('SIAK '.$params->get('universitas'));
+        $pdf->SetAuthor($params->get('fakultas'));
+        $pdf->SetTitle('Transkip Nilai Mahaiswa');
+        $pdf->SetSubject('Transkip');
+
+        // Remove Header n Footer
+        $pdf->setPrintHeader(false);
+        $pdf->setPrintFooter(false);
+
+        // set default monospaced font
+        $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
+
+        // set margins
+        //$pdf->SetMargins(0, 0, 0);
+
+        // set auto page breaks
+        $pdf->SetAutoPageBreak(true, PDF_MARGIN_BOTTOM);
+
+        // set image scale factor
+        $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
+
+        // set some language-dependent strings (optional)
+        if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
+            require_once dirname(__FILE__).'/lang/eng.php';
+            $pdf->setLanguageArray($l);
+        }
+
+        // ---------------------------------------------------------
+
+        // set font
+        $pdf->setFont('times', 'B', 14);
+
+        // add a page
+        $pdf->AddPage();
+
+        // create Header
+        $logoUniv = JPATH_ROOT.'/'.$params->get('logoUniv');
+
+        $pdf->Image($logoUniv, 20, 10, 20, 20);
+        $pdf->Cell(0, 0, strtoupper($params['universitas']), 0, 1, 'C', 0, '', 0);
+        $pdf->setFontsize(12);
+        $pdf->Cell(0, 0, strtoupper($params['fakultas']), 0, 1, 'C', 0, '', 0);
+        $pdf->setFont('times', '', 10);
+        $pdf->Cell(0, 0, strtoupper($params->get('akreditasi')), 0, 1, 'C', 0, '', 0);
+        $pdf->Cell(0, 0, 'Alamat : '.$params->get('alamat').', '.$params->get('kota').', '.$params->get('propinsi'), 0, 1, 'C', 0, '', 0);
+        $pdf->Line(20, 32, 190, 32, ['width' => 0.5, 'cap' => 'square', 'join' => 'mitter', 'dash' => 0]);
+
+        $pdf->setXY(0, 37);
+        $pdf->setFontsize(12);
+        $pdf->Cell(0, 0, 'TRANSKRIP NILAI', 0, 1, 'C', 0, '', 0);
+        $pdf->setFontsize(10);
+        $pdf->Text(20, 45, 'Nama');
+        $pdf->Text(50, 45, ':');
+        $pdf->Text(52, 45, $mahasiswa->name);
+        $pdf->Text(115, 45, 'Program Studi');
+        $pdf->Text(137, 45, ':');
+        $pdf->Text(139, 45, $dataMahasiswa->programstudi);
+
+        $pdf->Text(20, 50, 'NPM');
+        $pdf->Text(50, 50, ':');
+        $pdf->Text(52, 50, strtoupper($mahasiswa->username));
+        $pdf->Text(115, 50, 'Tahun Masuk');
+        $pdf->Text(137, 50, ':');
+        $pdf->Text(139, 50, $dataMahasiswa->angkatan);
+        $pdf->Text(20, 55, 'IPK ');
+        $pdf->Text(50, 55, ':');
+        $pdf->Text(115, 55, 'Tanggal Lulus');
+        $pdf->Text(137, 55, ':');
+        empty($ta) ? $tanggalulus = '--/--/----' : $tanggalulus = HTMLHelper::date($tanggalulus, 'd/m/Y');
+        $pdf->Text(139, 55, $tanggalulus);
+        $pdf->setFontsize(7);
+
+        $vspace = 3.5;
+        $y_awal = 70;
+        $xkiri = 15;
+        $xkanan = 110;
+        $a = 1;
+        $sks = 0;
+        $bxs = 0;
+
+        $pdf->setFont('times', 'B', 7);
+
+        // gambar tabel kiri
+        $y = $y_awal;
+        $pdf->Line($xkiri, $y, ($xkiri + 90), ($y), ['width' => 0.25, 'cap' => 'square', 'join' => 'mitter', 'dash' => 0]);
+        $pdf->Text($xkiri + 19, $y, 'Matakuliah');
+        $pdf->Text(($xkiri + 58), $y, 'SKS');
+        $pdf->Text(($xkiri + 66), $y, 'Nilai');
+        $pdf->Text(($xkiri + 73), $y, 'Angka');
+        $pdf->Text(($xkiri + 83), $y, 'S x A');
+        $pdf->Line($xkiri, $y, ($xkiri + 90), ($y), ['width' => 0.25, 'cap' => 'square', 'join' => 'mitter', 'dash' => 0]);
+        $y += $vspace;
+
+        $pdf->setFont('times', '', 7);
+
+        for ($l = 0; $l < $tabelKiri; ++$l) {
+            if (strlen($nilai['nilai'][$l]->mk) >= 40) {
+                $pdf->setFontsize(6);
+                $pdf->Text($xkiri, $y, $a.'. '.$nilai['nilai'][$l]->mk);
+                $pdf->setFontsize(7);
+            } else {
+                $pdf->Text($xkiri, $y, $a.'. '.$nilai['nilai'][$l]->mk);
+            }
+            $sks += $nilai['nilai'][$l]->sks;
+            $bxs += $nilai['nilai'][$l]->BxS;
+            $pdf->Text(($xkiri + 60), $y, $nilai['nilai'][$l]->sks);
+            $pdf->Text(($xkiri + 68), $y, $nilai['nilai'][$l]->nilai_angka);
+            $pdf->Text(($xkiri + 77), $y, $nilai['nilai'][$l]->nilai_mutu);
+            $pdf->Text(($xkiri + 84), $y, $nilai['nilai'][$l]->BxS);
+            $pdf->Line($xkiri, $y, ($xkiri + 90), ($y), ['width' => 0.25, 'cap' => 'square', 'join' => 'mitter', 'dash' => 0]);
+            $y += $vspace;
+            $pdf->Line($xkiri, $y, ($xkiri + 90), ($y), ['width' => 0.25, 'cap' => 'square', 'join' => 'mitter', 'dash' => 0]);
+
+            $pdf->Line($xkiri, $y_awal, $xkiri, $y, ['width' => 0.25, 'cap' => 'square', 'join' => 'mitter', 'dash' => 0]);
+            $pdf->Line($xkiri + 58, $y_awal, $xkiri + 58, $y, ['width' => 0.25, 'cap' => 'square', 'join' => 'mitter', 'dash' => 0]);
+            $pdf->Line($xkiri + 66, $y_awal, $xkiri + 66, $y, ['width' => 0.25, 'cap' => 'square', 'join' => 'mitter', 'dash' => 0]);
+            $pdf->Line($xkiri + 73, $y_awal, $xkiri + 73, $y, ['width' => 0.25, 'cap' => 'square', 'join' => 'mitter', 'dash' => 0]);
+            $pdf->Line($xkiri + 83, $y_awal, $xkiri + 83, $y, ['width' => 0.25, 'cap' => 'square', 'join' => 'mitter', 'dash' => 0]);
+            $pdf->Line($xkiri + 90, $y_awal, $xkiri + 90, $y, ['width' => 0.25, 'cap' => 'square', 'join' => 'mitter', 'dash' => 0]);
+
+            ++$a;
+        }
+
+        // End tabel Kiri
+        //
+        // Start Tabel Kanan
+
+        $pdf->setFont('times', 'B', 7);
+        $y = $y_awal;
+        $pdf->Line($xkanan, $y, ($xkanan + 90), ($y), ['width' => 0.25, 'cap' => 'square', 'join' => 'mitter', 'dash' => 0]);
+        $pdf->Text($xkanan + 19, $y, 'Matakuliah');
+        $pdf->Text(($xkanan + 58), $y, 'SKS');
+        $pdf->Text(($xkanan + 66), $y, 'Nilai');
+        $pdf->Text(($xkanan + 73), $y, 'Angka');
+        $pdf->Text(($xkanan + 83), $y, 'S x A');
+        $pdf->Line($xkanan, $y, ($xkanan + 90), ($y), ['width' => 0.25, 'cap' => 'square', 'join' => 'mitter', 'dash' => 0]);
+        $y += $vspace;
+
+        $pdf->setFont('times', '', 7);
+
+        for ($k = $tabelKiri; $k < $sumMK; ++$k) {
+            if (strlen($nilai['nilai'][$k]->mk) >= 40) {
+                $pdf->setFontsize(6);
+                $pdf->Text($xkanan, $y, $a.'. '.$nilai['nilai'][$k]->mk);
+                $pdf->setFontsize(7);
+            } else {
+                $pdf->Text($xkanan, $y, $a.'. '.$nilai['nilai'][$k]->mk);
+            }
+
+            $sks += $nilai['nilai'][$k]->sks;
+            $bxs += $nilai['nilai'][$k]->BxS;
+            $pdf->Text(($xkanan + 60), $y, $nilai['nilai'][$k]->sks);
+            $pdf->Text(($xkanan + 68), $y, $nilai['nilai'][$k]->nilai_angka);
+            $pdf->Text(($xkanan + 77), $y, $nilai['nilai'][$k]->nilai_mutu);
+            $pdf->Text(($xkanan + 84), $y, $nilai['nilai'][$k]->BxS);
+            $pdf->Line($xkanan, $y, ($xkanan + 90), ($y), ['width' => 0.25, 'cap' => 'square', 'join' => 'mitter', 'dash' => 0]);
+            $y += $vspace;
+            $pdf->Line($xkanan, $y, ($xkanan + 90), ($y), ['width' => 0.25, 'cap' => 'square', 'join' => 'mitter', 'dash' => 0]);
+            ++$a;
+        }
+        $pdf->Text($xkanan + 19, $y, 'Jumlah');
+        $pdf->Text($xkanan + 60, $y, $sks);
+        $pdf->Text($xkanan + 84, $y, $bxs);
+
+        $pdf->SetFontsize(10);
+        $pdf->Text(52, 55, sprintf('%.2f', ($bxs / $sks)));
+        $pdf->SetFontsize(7);
+
+        $pdf->Line($xkanan, $y, ($xkanan + 90), ($y), ['width' => 0.25, 'cap' => 'square', 'join' => 'mitter', 'dash' => 0]);
+        $y += $vspace;
+        $pdf->Line($xkanan, $y, ($xkanan + 90), ($y), ['width' => 0.25, 'cap' => 'square', 'join' => 'mitter', 'dash' => 0]);
+
+        $pdf->Line($xkanan, $y_awal, $xkanan, $y, ['width' => 0.25, 'cap' => 'square', 'join' => 'mitter', 'dash' => 0]);
+        $pdf->Line($xkanan + 58, $y_awal, $xkanan + 58, $y, ['width' => 0.25, 'cap' => 'square', 'join' => 'mitter', 'dash' => 0]);
+        $pdf->Line($xkanan + 66, $y_awal, $xkanan + 66, $y, ['width' => 0.25, 'cap' => 'square', 'join' => 'mitter', 'dash' => 0]);
+        $pdf->Line($xkanan + 73, $y_awal, $xkanan + 73, $y, ['width' => 0.25, 'cap' => 'square', 'join' => 'mitter', 'dash' => 0]);
+        $pdf->Line($xkanan + 83, $y_awal, $xkanan + 83, $y, ['width' => 0.25, 'cap' => 'square', 'join' => 'mitter', 'dash' => 0]);
+        $pdf->Line($xkanan + 90, $y_awal, $xkanan + 90, $y, ['width' => 0.25, 'cap' => 'square', 'join' => 'mitter', 'dash' => 0]);
+
+        // End tabel kanan
+
+        $y += $vspace;
+        $pdf->Text($xkiri, $y, 'Judul Tugas Akhir :');
+
+        $pdf->SetFontsize(10);
+        $y += (7 * $vspace);
+        $pdf->setXY($xkiri, $y);
+        $pdf->Cell(100, 0, $params['kota'].', '.HTMLHelper::Date(Date::getInstance(), 'd F Y'), 0, 1, 'C', 0, '', 0);
+
+        $pdf->setXY($xkiri, $y += (2 * $vspace));
+        $pdf->Cell(100, 0, 'Dekan '.ucfirst(strtolower($params['fakultas'])), 0, 1, 'C', 0, '', 0);
+
+        $y += (7 * $vspace);
+        $pdf->setXY($xkiri, $y);
+        $pdf->Cell(100, 0, 'Dr. Ir. Hery Sonawan, S.T, M.T', 0, 1, 'C', 0, '', 0);
+
+        // put PDF to PHP Stream Dwnload
+        $pdf->Output($namaFilePDF, 'D');
+    }
+}

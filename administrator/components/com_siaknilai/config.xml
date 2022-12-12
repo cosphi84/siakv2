@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <fieldset
+        name        = "siaknilai_config"
+        label       = "COM_SIAKNILAI_CONFIG_CFG_LABEL"
+        description = "COM_SIAKNILAI_CONFIG_CFG_DESC"
+    >
+        <field 
+            name    = "nilai_en"
+            type    = "radio"
+            default = "0"
+            label   = "COM_SIAKNILAI_CONFIG_MODUL_ENABLE_LABEL"
+            description = ""
+            required    = "true"
+            class       = "btn-group btn-group-yesno"
+        >
+            <option value = "1">JYES</option>
+            <option value = "0">JNO</option>
+        </field>
+    </fieldset>
+
+    <fieldset
+        name        = "permission"
+        label       = "JCONFIG_PERMISSIONS_LABEL"
+        description = "JCONFIG_PERMISSIONS_DESC"
+    >
+        <field 
+            name        = "rules"
+            type        = "rules"
+            label       = "JCONFIG_PERMISSIONS_LABEL"
+            class       = "input"
+            validate    = "rules"
+            filter      = "rules"
+            component   = "com_siaknilai"
+            section     = "component"
+        />
+    </fieldset>
+</config>

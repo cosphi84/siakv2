@@ -1,0 +1,35 @@
+.merah {
+	color: red;
+}
+
+.kuning {
+	color: yellow;
+}
+
+.hijau {
+	color: green;
+}
+
+.draft{
+	color:orangered
+}
+
+.final{
+	color: steelblue;
+}	
+
+.setuju{
+	color:lime;
+}
+
+
+.loading {
+	width: 16px;
+    height: 16px;
+    font-size: 0px;
+    display: inline-block;
+}
+
+.rupiah::before{
+	content: 'Rp. ';
+}

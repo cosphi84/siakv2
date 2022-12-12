@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fields name="filter">
+        <field 
+            name="search"
+            type="text"
+            label="COM_SIAK_FILTER_SEARCH_LABEL" 
+            description=""
+            hint="Kode MK"
+		/>
+
+	<field
+		name = "tahun_ajaran"
+		type = "ta"
+		onchange = "this.form.submit();"
+		description = ""
+		>
+	<option value="">COM_SIAK_FIELD_TAHUN_AJARAN_LABEL</option>
+	</field>
+
+
+         <field 
+            name="prodi"
+            type="prodis"
+            onchange="this.form.submit();"
+            description=""
+            class="input input-medium"
+        >
+            <option value="">COM_SIAK_OPTION_SELECT_PRODI</option>
+        </field>
+
+        <field 
+            name="jurusan"
+            type="jurusans"
+            onchange="this.form.submit();"
+            description=""
+            class="input input-medium"
+        >
+            <option value="">COM_SIAK_SELECT_JURUSAN</option>
+    </field>
+
+    <field
+	    name = "semester"
+	    type = "semesters"
+	    onchange="this.form.submit();"
+	    desctiption=""
+	    class ="input input-medium"
+	    >
+    <option value="">COM_SIAK_MENUITEM_SELECT_SEMESTER</option>
+    </field>
+
+
+        <field 
+            name="kelas"
+            type="kelas"
+            onchange="this.form.submit();"
+            description=""
+            class="input input-xlarge"
+        >
+            <option value="">COM_SIAK_SELECT_KELAS</option>
+        </field>       
+        
+       <field 
+            name="published"
+            type="status"
+            onchange="this.form.submit();"
+            label = ""
+            description = ""
+            class="input input-medium"
+            >
+            <option value="">JGLOBAL_SELECT_AN_OPTION</option>
+            
+        </field>
+    </fields>
+
+    <fields name="list">		
+		<field
+			name="limit"
+			type="limitbox"
+			label="COM_CONTENT_LIST_LIMIT"
+			description="COM_CONTENT_LIST_LIMIT_DESC"
+			class="input-medium"
+			default="5"
+			onchange="this.form.submit();"
+		/>
+	</fields>
+</form>

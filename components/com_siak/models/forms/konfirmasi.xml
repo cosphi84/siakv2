@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fieldset 
+        name="frmKonfirmasi" 
+        label = "COM_SIAK_FRM_KONFIRMASI_LABEL"
+        addfieldpath = "/administrator/components/com_siak/models/fields/"
+    > 
+        <field 
+            name        = "status"
+            type        = "statusmhs"
+            label       = "COM_SIAK_KONF_FIELD_STATUS_LABEL"
+            description = ""
+            hiddenLabel = "true"
+            required    = "true"
+            class       = "input input-medium"
+        >
+            <option value="">COM_SIAK_KONF_FIELD_STATUS_SELECT</option>
+        </field>
+
+        <field  
+            name        = "prodi"
+            type        = "prodi"
+            label       = "COM_SIAK_PRODI_TITLE_LABEL"
+            description = ""
+            required    = "true"
+            class       = "input input-large"
+        >
+        <option value="">COM_SIAK_SELECT_PRODI</option>     
+        </field>
+
+        <field  
+            name        = "jurusan"
+            type        = "jurusan"
+            label       = "COM_SIAK_JURUSAN_TITLE_LABEL"
+            description = ""
+            required    = "true"
+            class       = "input input-medium"
+        >
+            <option value="">COM_SIAK_SELECT_JURUSAN</option>
+        </field>
+
+        <field  
+            name        = "kelas"
+            type        = "kelas"
+            label       = "COM_SIAK_KELAS_TITLE_LABEL"
+            description = ""
+            required    = "true"
+            class       = "input input-medium"
+        >
+            <option calue="">COM_SIAK_SELECT_KELAS</option>
+        </field>
+
+        <field 
+            name        = "semester"
+            type        = "semester"
+            label       = "COM_SIAK_FIELD_SEMESTER_LABEL"
+            description = ""
+            required    = "true"
+            class       = "input input-large"
+        >
+            <option value = "">COM_SIAK_SELECT_SEMESTER</option>
+        </field>
+
+        <field  
+            name        = "ta"
+            type        = "ta"
+            label       = "COM_SIAK_TA_TITLE_LABEL"
+            description = ""
+            class       = "input input-medium"
+            required    = "true"
+        >
+            <option value="">COM_SIAK_SELECT_TA</option>
+        </field>
+    </fieldset>
+</form>

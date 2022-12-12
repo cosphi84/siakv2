@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fieldset name="frmWali">
+        <field 
+            name        = "prodi"
+            type        = "prodis"
+            label       = "COM_SIAK_PRODI_FIELD_TITLE_LABEL"
+            description = ""
+            required    = "true"
+            class       = "input input-medium"
+            autofocus   = "true"
+        >
+        <option value="">JGLOBAL_SELECT_AN_OPTION</option>
+        </field>
+
+       
+        <field 
+            name        = "kelas"
+            type        = "kelas"
+            label       = "COM_SIAK_KELAS_FIELD_TITLE_LABEL"
+            description = ""
+            required    = "true"
+            class       = "input input-medium"
+        >
+        <option value="">JGLOBAL_SELECT_AN_OPTION</option>
+        </field>
+
+        <field 
+            name        = "angkatan"
+            type        = "number"
+            label       = "COM_SIAK_WALIS_FIELD_ANGKATAN_LABEL"
+            description = ""
+            required    = "true"
+            min         = "2000"
+            class       = "input input-small"
+        />
+             
+        <field 
+            name        = "user_id"
+            type        = "modal_dosens"
+            label       = "COM_SIAK_WALIS_FIELD_NAMA_LABEL"
+            description = ""
+            required    = "true"
+            class       = "input input-medium"
+        />
+
+        <field 
+            name        = "status"
+            type        = "radio"
+            label       = "COM_SIAK_GLOBAL_STATE_PUBLISHED"
+            description = ""
+            class       = "btn-group btn-group-yesno"
+            default     = '1'
+        >
+        <option value="0">JNO</option>
+        <option value="1">JYES</option>
+        </field>
+        
+    </fieldset>
+</form>
+

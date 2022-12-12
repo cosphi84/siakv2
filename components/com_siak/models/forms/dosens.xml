@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fieldset name="frmPilihDosenMK" 
+            addfieldpath="/administrator/components/com_siak/models/fields">
+        <field  
+            name        = "prodi"
+            label       = "COM_SIAK_PRODI_TITLE_LABEL"
+            type        = "prodis"
+        >
+        <option value="">COM_SIAK_SELECT_PRODI</option>
+        </field>
+
+        <field  
+            name        = "jurusan"
+            label       = "COM_SIAK_JURUSAN_TITLE_LABEL"
+            type        = "jurusan"
+            showon      = "prodi!:"
+        >
+        <option value="">COM_SIAK_SELECT_JURUSAN</option>
+        </field>
+
+        <field  
+            name        = "ta"
+            label       = "COM_SIAK_TA_TITLE_LABEL"
+            type        = "ta"
+            showon      = "jurusan!:"
+        >
+        <option value="">COM_SIAK_SELECT_TA</option>
+        </field>
+
+        <field  
+            name        = "kelas"
+            label       = "COM_SIAK_KELAS_TITLE_LABEL"
+            type        = "kelas"
+            showon      = "ta!:"
+        >
+        <option value="">COM_SIAK_SELECT_KELAS</option>
+        </field>
+    </fieldset>
+</form>

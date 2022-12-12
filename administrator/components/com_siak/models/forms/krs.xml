@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fieldset name="frmEditKRS">
+		<field
+			name		= "npm"
+			type		= "text"
+			label 		= "COM_SIAK_FIELD_NPM_LABEL"
+			description = ""
+			class		= "input input-medium"
+			readonly 	= "true"
+		/>
+
+		<field
+			name		= "mahasiswa"
+			type		= "text"
+			label 		= "COM_SIAK_MAHASISWA_FIELD_TITLE_LABEL"
+			description = ""
+			class		= "input input-large"
+			readonly 	= "true"
+		/>	
+
+		<field
+			name 		= "semester"
+			type 		= "text"
+			label 		= "COM_SIAK_SEMESTER_FIELD_TITLE_LABEL"
+			class 		= "input input-xlarge"
+			description = ""
+			disabled 	= "true"
+		/>
+      
+      <field 
+            name        = "prodi"
+            type        = "prodis"
+            label       = "COM_SIAK_PRODI_FIELD_TITLE_LABEL"
+            description = ""
+            required    = "true"
+            class       = "input input-large"
+        >
+        <option value="">JGLOBAL_SELECT_AN_OPTION</option>
+        </field>
+        
+        <field 
+            name        = "jurusan"
+            type        = "jurusanstatis"
+            label       = "COM_SIAK_JURUSAN_FIELD_TITLE_LABEL"
+            description = ""
+            required    = "true"
+            class       = "input input-large"
+        >
+        <option value="">JGLOBAL_SELECT_AN_OPTION</option>
+        </field>
+			
+		
+		<field 
+			name 		= "tahun_ajaran"
+			type 		= "ta"
+			class 		= "input input-medium"
+			label 		= "COM_SIAK_FIELD_TAHUN_AJARAN_LABEL"
+			desciption 	= ""
+			required 	= "true"
+			>
+			<option value="">COM_SIAK_FIELD_TAHUN_AJARAN_LABEL</option>
+		</field>
+    </fieldset>
+</form>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fieldset name="frmJenisUser" >
+        <field  
+            name        = "title"
+            label       = "JGLOBAL_TITLE"
+            description = ""
+            type        = "text"
+            class       = "input input-large"
+            required    = "true"
+            autofocus   = "true"
+        />
+
+        <field 
+            name        = "alias"
+            label       = "JFIELD_ALIAS_LABEL"
+            description = ""
+            type        = "text"
+            class       = "input input-large"
+            required    = "true"
+        />
+
+        <field
+			name        = "state"
+			type        = "list"
+			label       = "JSTATUS"
+			description = "JFIELD_PUBLISHED_DESC"
+			class       = "chzn-color-state"
+			filter      = "intval"
+			size        = "1"
+			default     = "1"
+			>
+			<option value="1">JPUBLISHED</option>
+			<option value="0">JUNPUBLISHED</option>
+			<option value="2">JARCHIVED</option>
+			<option value="-2">JTRASHED</option>
+		</field>
+    </field>
+</form>

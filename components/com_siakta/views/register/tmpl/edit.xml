@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+    <layout 
+        title="COM_SIAKTA_REGISTER_TUGAS_AKHIR_TITLE" 
+        option="COM_SIAKTA_REGISTER_TUGAS_AKHIR_OPTION" >
+        <message>
+            <![CDATA[COM_SIAKTA_REGISTER_TUGAS_AKHIR_DESC]]>
+        </message>
+    </layout>
+</metadata>

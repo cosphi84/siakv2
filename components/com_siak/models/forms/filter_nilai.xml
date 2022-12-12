@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fields name="filter"
+    addfieldpath="/administrator/components/com_siak/models/fields">
+        <field  
+            name        = "search"
+            type        = "text"
+            label       = "COM_SIAK_FILTER_SEARCH_LABEL"
+            description = ""
+            hint        = "COM_SIAK_SEARCH_NPM_ATAU_MAHASISWA_LABEL"
+        />
+
+        <field
+            name        = "semester"
+            type        = "semesterdinamis"
+            label       = "COM_SIAK_PRODI_TITLE_LABEL"
+            description = ""
+            onchange    = "this.form.submit();"
+            class       = "input input-xlarge"
+        >
+        <option value="">COM_SIAK_SELECT_SEMESTER</option>
+        </field>        
+    </fields>
+    <fields name="list">
+        <field 
+            name        = "limit"
+            type        = "limitbox"
+            label       = "COM_CONTENT_LIST_LIMIT"
+			description = "COM_CONTENT_LIST_LIMIT_DESC"
+			class       = "input-medium"
+			default     = "15"
+			onchange    = "this.form.submit();"
+        />
+    </fields>
+</form>

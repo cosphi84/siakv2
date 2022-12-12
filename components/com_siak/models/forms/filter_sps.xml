@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fields name="filter"
+            addfieldpath="/administrator/components/com_siak/models/fields">
+        
+        <field 
+            name="search"
+            type="modal_matakuliah"
+            label="COM_SIAK_FILTER_SEARCH_LABEL"
+            description=""
+            hint="JSEARCH_FILTER"
+        />
+
+        <field
+            name    = "prodi"
+            type    = "prodis"
+            label   = ""
+            description = ""
+        >
+                <option value = "">COM_SIAK_SELECT_PRODI</option>
+        </field>
+
+
+        <field 
+            name   = "tahun_ajaran"
+            type   = "ta"
+            label  = "COM_SIAK_TA_TITLE_LABEL"
+            description = ""
+        >
+        <option value="">COM_SIAK_SELECT_TA</option>
+        </field>
+
+        <field
+            name    = "kelas"
+            type    = "kelas"
+            label   = "COM_SIAK_KELAS_TITLE_LABEL"
+            description = ""
+        >
+        <option value = "">COM_SIAK_SELECT_KELAS</option>
+        </field>       
+    </fields>
+
+    <fields name="list">		
+		<field
+			name="limit"
+			type="limitbox"
+			label="COM_CONTENT_LIST_LIMIT"
+			description="COM_CONTENT_LIST_LIMIT_DESC"
+			class="input-medium"
+			default="25"
+			onchange="this.form.submit();"
+		/>
+	</fields>
+</form>

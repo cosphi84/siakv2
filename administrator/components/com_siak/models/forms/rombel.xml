@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fieldset name="frmNilai">
+        <field 
+            name        = "mahasiswa"
+            type        = "text"
+            label       = "COM_SIAK_MAHASISWA_FIELD_TITLE_LABEL" 
+            description = ""
+            readonly    = "true"
+            class       = "input input-medium"
+        />
+        <field 
+            name        = "prodi"
+            type        = "text"
+            label       = "COM_SIAK_FIELD_NPM_LABEL" 
+            description = ""
+            readonly    = "true"
+            class       = "input input-medium"
+        />
+
+        <field 
+            name        = "jurusan"
+            type        = "number"
+            label       = "COM_SIAK_NILAI_FIELD_KEHADIRAN_LABEL"
+            desc        = ""
+            min         = "0"
+            max         = "100"
+            step        = "1"
+            class       = "input input-small"
+        />
+
+        <field 
+            name        = "semester"
+            type        = "number"
+            label       = "COM_SIAK_NILAI_FIELD_TUGAS_LABEL"
+            desc        = ""
+            min         = "0"
+            max         = "100"
+            step        = "1"
+            class       = "input input-small"
+        />
+
+        <field 
+            name        = "kelas"
+            type        = "number"
+            label       = "COM_SIAK_NILAI_FIELD_UTS_LABEL"
+            desc        = ""
+            min         = "0"
+            max         = "100"
+            step        = "1"
+            class       = "input input-small"
+        />
+
+        <field 
+            name        = "ta"
+            type        = "ta"
+            label       = "COM_SIAK_NILAI_FIELD_UAS_LABEL"
+            desc        = ""
+            min         = "0"
+            max         = "100"
+            step        = "1"
+            class       = "input input-small"
+        />
+
+        <field 
+            name        = "matakuliah"
+            type        = "text"
+            label       = "COM_SIAK_MAHASISWA_FIELD_TITLE_LABEL" 
+            description = ""
+            readonly    = "true"
+            class       = "input input-medium"
+        />
+
+        
+    </fieldset>
+</form>

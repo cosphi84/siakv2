@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fieldset 
+        name="frmKpMahasiswa"
+        label="COM_SIAK_FRM_KP_LABEL"
+        addfieldpath="/administrator/components/com_siak/models/fields/"
+    >
+        <field
+            name        = "nama"
+            label       = "COM_SIAK_FIELD_NAMA_TITLE"
+            type        = "text"
+            description = ""
+            class       = "input input-medium"
+            readonly    = "true"
+        />
+
+        <field
+            name        = "npm"
+            label       = "COM_SIAK_FIELD_NPM_TITLE"
+            type        = "text"
+            description = ""
+            class       = "input input-medium"
+            readonly    = "true"
+        />
+
+        <field
+            name        = "prodi"
+            type        = "prodi"
+            label       = "COM_SIAK_PRODI_TITLE_LABEL"
+            description = ""
+            class       = "input input-medium"
+            required    = "true"
+        >
+            <option value="">COM_SIAK_SELECT_PRODI</option>
+        </field>
+
+        <field
+            name        = "jurusan"
+            type        = "jurusan"
+            label       = "COM_SIAK_JURUSAN_TITLE_LABEL"
+            description = ""
+            class       = "input input-medium"
+            required    = "true"
+        >
+            <option value="">COM_SIAK_SELECT_JURUSAN</option>
+        </field>
+
+        <field  
+            name        = "kelas"
+            type        = "kelas"
+            label       = "COM_SIAK_KELAS_TITLE_LABEL"
+            description = ""
+            required    = "true"
+            class       = "input input-medium"
+        >
+            <option calue="">COM_SIAK_SELECT_KELAS</option>
+        </field>
+
+        <field  
+            name        = "tahun_ajaran"
+            type        = "ta"
+            label       = "COM_SIAK_TA_TITLE_LABEL"
+            description = ""
+            class       = "input input-medium"
+            required    = "true"
+        >
+            <option value = "">COM_SIAK_SELECT_TA</option>
+        </field>
+
+        <field 
+            name        = "instansi"
+            type        = "modal_industri"
+            label       = "COM_SIAK_KP_FIELD_INSTANSI_LABEL"
+            description = "COM_SIAK_KP_FIELS_INSTANSI_DESC"
+            class       = "input input-xxlarge"
+            onchange    = "this.value=this.value.toUpperCase();"
+            required    = "true"
+        />
+
+        
+
+        <field 
+            name        = "tanggal_mulai"
+            type        = "calendar"
+            label       = "COM_SIAK_KP_FIELD_TANGGAL_MULAI_LABEL"
+            description = ""
+            class       = "inputbox"
+            required    = "true"
+            default     = "now"
+        />
+
+        <field 
+            name        = "tanggal_selesai"
+            type        = "calendar"
+            label       = "COM_SIAK_KP_FIELD_TANGGAL_SELESAI_LABEL"
+            description = ""
+            class       = "inputbox"
+            required    = "true"
+            default     = "now + 3 month"
+        />
+
+        <field 
+            name        = "judul_laporan"
+            type        = "text"
+            label       = "COM_SIAK_KP_FIELD_JUDUL_LAPORAN_LABEL"
+            description = ""
+            class       = "input input-xxlarge"
+            onchange    = "this.value = this.value.toUpperCase();"
+        />
+
+        <field 
+            name        = "file_laporan"
+            type        = "file"
+            label       = "COM_SIAK_KP_FIELD_FILE_LAPORAN_LABEL"
+            description = ""
+            class       = "inputbox"
+            accept      = ".pdf"
+        />
+
+        <field 
+            name        = "id"
+            type        = "hidden"
+        />
+        
+    </fieldset>
+
+    <fieldset 
+        name = "frmKpKaprodi"
+        addfieldpath="/administrator/components/com_siak/models/fields/">
+        <field 
+            type        = "hidden"
+            name        = "id"
+        />
+
+        <field 
+            name       = "dosbing"
+            type       = "modal_alldosens"
+            label      = "COM_SIAK_DOSBING_FIELD_LABEL"
+            class       = "input input-large"
+        />
+
+        <field 
+            name        = "tanggal_seminar"
+            type        = "calendar"
+            label       = "COM_SIAK_KP_FIELD_TANGGAL_SEMINAR_LABEL"
+            description = ""
+            class       = "inputbox"
+            default     = "now"
+        />
+    </fieldset>
+</form>
+
+

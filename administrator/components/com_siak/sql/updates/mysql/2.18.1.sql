@@ -1,0 +1,1 @@
+ALTER TABLE `#__siak_sp` ADD `dosen` INT(10) NULL AFTER `semester`;

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fieldset name="frmBobotNilai">
+        <field
+            name        = "title"
+            label       = "COM_SIAK_BOBOT_FIELD_TITLE_LABEL"
+            type        = "text"
+            description = ""
+            class       = "input input-medium"
+            required    = "true"
+        />
+
+        <field
+            name        = "alias"
+            type        = "text"
+            label       = "COM_SIAK_BOBOT_FIELD_ALIAS_LABEL"
+            description = ""
+            class       = "input input-medium"
+            required    = "true"
+        />
+            
+
+        <field
+            name        = "bobot"
+            type        = "number"
+            label       = "COM_SIAK_BOBOT_FIELD_BOBOT_LABEL"
+            description = ""
+            class       = "input input-small"
+            min         = "0"
+            max         = "100"
+            step        = "5"
+            required    = "true"
+        />
+            
+        <field
+			name        = "state"
+			type        = "status"
+			label       = "JSTATUS"
+			description = "JFIELD_PUBLISHED_DESC"
+			class       = "chzn-color-state"
+			filter      = "intval"
+			size        = "1"
+			default     = "1"
+			>
+			<option value="1">JPUBLISHED</option>
+			<option value="0">JUNPUBLISHED</option>
+			<option value="2">JARCHIVED</option>
+			<option value="-2">JTRASHED</option>
+		</field>        
+    </fieldset>
+</form>
+
+

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.0" method="upgrade">
+
+	<name>COM_SIAKUSERS</name>
+	<!-- The following elements are optional and free of formatting constraints -->
+	<creationDate>December 2022</creationDate>
+	<author>Siak Development Team</author>
+	<authorEmail>admin.siak@ft-untagcirebon.ac.id</authorEmail>
+	<authorUrl>http://ft-untagcirebon.ac.id</authorUrl>
+	<copyright>2022 @ SIAK FT Development Team</copyright>
+	<license>Limited used at FT UNTAG Cirebon Only</license>
+	<!--  The version string is recorded in the components table -->
+	<version>1.0.1</version>
+	<!-- The description is optional and defaults to the name -->
+	<description>COM_SIAKUSERS_DESCRIPTION</description>
+
+	<!-- Runs on install/uninstall/update; New in 2.5 -->
+	<scriptfile>script.php</scriptfile>
+
+	<install> <!-- Runs on install -->
+		<sql>
+			<file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+		</sql>
+	</install>
+	<uninstall> <!-- Runs on uninstall -->
+		<sql>
+			<file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+		</sql>
+	</uninstall>
+	<update> <!-- Runs on update; New since J2.5 -->
+		<schemas>
+			<schemapath type="mysql">sql/updates/mysql</schemapath>
+		</schemas>
+	</update>
+
+	<media destination="com_siakusers" folder="media">
+		<filename>index.html</filename>
+		<folder>js</folder>
+	</media>
+
+	<administration>
+		<!-- Administration Menu Section -->
+		<menu link='index.php?option=com_siakusers&amp;view=dashboard'>COM_SIAKUSERS_MENU</menu>
+			<submenu>
+				<menu link='index.php?option=com_siakusers&amp;view=users&amp;mode=0'>COM_SIAKUSERS_MENU_MAHASISWA</menu>
+				<menu link='index.php?option=com_siakusers&amp;view=users&amp;mode=1'>COM_SIAKUSERS_MENU_STAFF</menu>
+			</submenu>
+		<!-- Administration Main File Copy Section -->
+		<!-- Note the folder attribute: This attribute describes the folder
+			to copy FROM in the package to install therefore files copied
+			in this section are copied from /admin/ in the package -->
+		<files folder="admin">
+			<!-- Admin Main File Copy Section -->
+			<filename>index.html</filename>
+			<filename>config.xml</filename>
+			<filename>siakusers.php</filename>
+			<filename>controller.php</filename>
+			<filename>access.xml</filename>
+			<!-- SQL files section -->
+			<folder>sql</folder>
+			<!-- tables files section -->
+			<folder>tables</folder>
+			<!-- models files section -->
+			<folder>models</folder>
+			<!-- views files section -->
+			<folder>views</folder>
+			<!-- controllers files section -->
+			<folder>controllers</folder>
+			<!-- helpers files section -->
+			<folder>helpers</folder>
+		</files>
+		<languages folder="admin/language">
+        		<language tag="id-ID">id-ID/id-ID.com_siakusers.ini</language>
+                <language tag="id-ID">id-ID/id-ID.com_siakusers.sys.ini</language>
+		</languages>
+	</administration>
+
+</extension>

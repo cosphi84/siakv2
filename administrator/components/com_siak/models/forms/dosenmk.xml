@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fieldset name="frmDosenmk">
+        <field 
+            name        = "tahun_ajaran"
+            type        = "ta"
+            label       = "COM_SIAK_FIELD_TAHUN_AJARAN_LABEL"
+            description = ""
+            class       = "input input-medium"
+            hint        = "yyyy-yyyy"
+            required    = "true"
+            autofocus   = "true"
+        >
+        <option value = "">COM_SIAK_SELECT_TA</option>
+        </field>
+       
+       <field
+            name        = "matakuliah"
+            type        = "modal_matakuliah"
+            label       = "COM_SIAK_MATKUL_FIELD_NAMA_LABEL"
+            description = ""
+            required    = "true"
+            class       = "input input-medium"            
+        /> 
+
+        <field  
+            name        = "user_id"
+            type        = "modal_dosens"
+            label       = "COM_SIAK_DOSEN_MK_FIELD_DOSEN_TITLE"
+            description = ""
+            required    = "true"
+            class       = "input input-medium"
+        />       
+
+        <field 
+            name        = "prodi"
+            type        = "prodis"
+            label       = "COM_SIAK_PRODI_FIELD_TITLE_LABEL"
+            description = ""
+            required    = "true"
+            class       = "input input-large"
+            
+        >
+        <option value="">JGLOBAL_SELECT_AN_OPTION</option>
+        </field>
+        
+        <field 
+            name        = "jurusan"
+            type        = "jurusanstatis"
+            label       = "COM_SIAK_JURUSAN_FIELD_TITLE_LABEL"
+            description = ""
+            class       = "input input-large"
+        >
+        <option value="">JGLOBAL_SELECT_AN_OPTION</option>
+        </field>
+
+        <field 
+            name        = "kelas"
+            type        = "kelas"
+            label       = "COM_SIAK_KELAS_FIELD_TITLE_LABEL"
+            description = ""
+            required    = "true"
+            class       = "input input-large"
+        >
+        <option value="">JGLOBAL_SELECT_AN_OPTION</option>
+        </field>
+
+        <field 
+            name        = "state"
+            type        = "radio"
+            label       = "COM_SIAK_GLOBAL_STATE_PUBLISHED"
+            description = ""
+            class       = "btn-group btn-group-yesno"
+            default     = '1'
+        >
+        <option value="0">JNO</option>
+        <option value="1">JYES</option>
+        </field>
+    </fieldset>
+</form>

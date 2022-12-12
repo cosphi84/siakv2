@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fieldset name="frmRemidial">
+        <field
+            name        = "mahasiswa"
+            type        = "input"
+            label       = "COM_SIAK_MAHASISWA_LABEL"
+            description = ""
+            readonly    = "true"
+            class       = "input input-large"
+            />
+
+        <field 
+            name        = "npm"
+            type        = "text"
+            label       = "COM_SIAK_FIELD_NPM_TITLE"
+            description = ""
+            readonly    = "true"
+            class       = "input input-medium"
+            />
+
+        <field
+            name        = "kodeMK"
+            type        = "text"
+            label       = "COM_SIAK_MATKUL_FIELD_KODE_LABEL"
+            description = ""
+            readonly    = "true"
+            class       = "input input-medium"
+            />
+
+        <field
+            name        = "matakuliah"
+            label       = "COM_SIAK_MATKUL_FIELD_NAMA_LABEL"
+            type        = "text"
+            class       = "input input-large"
+            description = ""
+            readonly    = "true"
+            />
+
+        <field
+            name        = "ta"
+            type        = "text"
+            label       = "COM_SIAK_TA_TITLE_LABEL"
+            description = ""
+            class       = "input input-medium"
+            readonly    = "true"
+            />
+
+        <field
+            name        = "nilai_akhir"
+            type        = "text"
+            label       = "COM_SIAK_REMDID_FIELD_NILAI_AKHIR_ASLI_LABEL"
+            description = ""
+            readonly    = "true"
+            class       = "input input-small"
+            />
+
+        <field 
+            name        = "nilai_angka"
+            type        = "text"
+            label       = "COM_SIAK_REMDID_FIELD_NILAI_ANGKA_ASLI_LABEL"
+            description = ""
+            readonly    = "true"
+            class       = "input input-small"
+            />
+
+        <field
+            name        = "nilai_mutu"
+            type        = "text"
+            label       = "COM_SIAK_REMDID_FIELD_NILAI_MUTU_ASLI_LABEL"
+            description = ""
+            readonly    = "true"
+            class       = "input input-small"
+            />
+        
+        <field
+            name        = "nilai_akhir_remid"
+            type        = "number"
+            label       = "COM_SIAK_NILAI_AKHIR_LABEL"
+            description = ""
+            class       = "input input-small"
+            autofocus   = "true"
+            min         = "0"
+            max         = "100"
+            required    = "true"
+            />
+
+        <field
+            name        = "nilai_remid_angka"
+            type        = "text"
+            label       = "COM_SIAK_NILAI_HURUF_MUTU_LABEL"
+            description = ""
+            class       = "input input-small"
+            required    = "true"
+            readonly    = "true"
+            />
+
+        <field
+            name        = "nilai_remid_mutu"
+            type        = "number"
+            label       = "COM_SIAK_NILAI_ANGKA_MUTU_LABEL"
+            readonly    = "true"
+            description = ""
+            class       = "input input-small"
+            min         = "0"
+            max         = "4"
+            required    = "true"
+           />  
+
+        <field
+            name = "nilai_id"
+            type = "hidden"
+        />
+
+    </fieldset>
+</form>

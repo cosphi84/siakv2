@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fieldset name="frmProdi">
+        <field 
+            name        = "title"
+            type        = "text"
+            label       = "COM_SIAK_PRODI_FIELD_TITLE_LABEL"
+            description = ""
+            required    = "true"
+            class       = "input input-small"
+            autofocus   = "true"
+        />
+
+        <field 
+            name        = "alias"
+            type        = "text"
+            label       = "COM_SIAK_FIELD_ALIAS_LABEL"
+            description = ""
+            required    = "true"
+            class       = "input input-large"
+        />
+
+        <field 
+            name        = "strata"
+            type        = "text"
+            label       = "COM_SIAK_PRODI_FIELD_STRATA_LABEL"
+            description = ""
+            required    = "true"
+            class       = "input input-medium"
+        />
+
+        <field 
+            name        = "gelar"
+            type        = "text"
+            label       = "COM_SIAK_PRODI_FIELD_GELAR_LABEL"
+            description = ""
+            required    = "true"
+            class       = "input input-medium"
+        />
+
+        
+        <field 
+            name        = "kaprodi"
+            type        = "modal_dosens"
+            label       = "COM_SIAK_PRODI_FIELD_KAPRODI_LABEL"
+            description = ""
+            required    = "true"
+            class       = "input input-medium"
+        />
+        
+    </fieldset>
+</form>
+

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="COM_SIAK_VIEW_KP_FORM_MHS_TITLE" option="COM_SIAK_VIEW_KP_FORM_MHS_OPTION">
+		
+		<message>
+			<![CDATA[COM_SIAK_VIEW_KP_FORM_MHS_DESC]]>
+		</message>
+	</layout>
+</metadata>

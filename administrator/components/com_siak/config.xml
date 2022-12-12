@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+	<fieldset 
+        name="env" 
+        label="COM_SIAK_CONFIG_ENV_OPTION_LABEL" 
+        description="COM_SIAK_CONFIG_ENV_OPTION_DESC"
+        >
+
+		<field 
+			name="universitas"
+			type="text"
+			class="input input-xlarge"
+			label="COM_SIAK_CONFIG_FIELD_UNIV_LABEL"
+			description=""
+			required="true"
+			onchange="this.value=this.value.toUpperCase();"
+		/>
+		<field 
+			name="fakultas"
+			type="text"
+			class="input input-xlarge"
+			label="COM_SIAK_CONFIG_FIELD_FAKULTAS_LABEL"
+			description=""
+			required="true"
+			onchange="this.value=this.value.toUpperCase();"
+		/>
+		<field 
+			name="akreditasi"
+			type="text"
+			class="input input-xlarge"
+			label="COM_SIAK_CONFIG_FIELD_AKREDITASI_LABEL"
+			description=""
+			required="true"
+		/>
+
+		<field 
+			name="alamat"
+			type="text"
+			class="input input-xxlarge"
+			label="COM_SIAK_CONFIG_FIELD_ALAMAT_LABEL"
+			description=""
+			required="true"
+		/>
+
+		<field 
+			name="kota"
+			type="text"
+			class="input input-large"
+			label="COM_SIAK_CONFIG_FIELD_KOTA_LABEL"
+			description=""
+			required="true"
+		/>
+
+		<field 
+			name="propinsi"
+			type="text"
+			class="input input-large"
+			label="COM_SIAK_CONFIG_FIELD_PROPINSI_LABEL"
+			description=""
+			required="true"
+		/>
+
+		<field 
+			name="kodepos"
+			type="number"
+			class="input input-small"
+			label="COM_SIAK_CONFIG_FIELD_KODEPOS_LABEL"
+			description=""
+			required="true"
+            />
+
+        <field
+            name="dekan"
+            type="user"
+            class="input input-large"
+            label="Dekan"
+            description=""
+            required="true"
+        />
+
+		<field
+			name = "logoUniv"
+			type = "media"
+			class="input input-medium"
+			label = "COM_SIAK_CONFIG_FIELD_LOGO_UNIV"
+			description = ""
+			required = "true"
+		/>
+
+		<field
+			name = "logoFakultas"
+			type = "media"
+			class="input input-medium"
+			label = "COM_SIAK_CONFIG_FIELD_LOGO_FAKULTAS"
+			description = ""
+			required = "true"
+		/>
+
+
+	</fieldset>
+
+	<fieldset 
+        name="group" 
+        label="COM_SIAK_CONFIG_GROUP_OPTION_LABEL" 
+        description="COM_SIAK_CONFIG_GROUP_OPTION_DESC"
+        >
+
+		<field 
+			name="grpMahasiswa"
+			type="usergroup"
+			label="COM_SIAK_CONFIG_FIELD_GRP_MAHASISWA_LABEL"
+			description=""
+			required="true"
+			class="input input-large"
+		/>
+		
+		<field 
+			name="grpDosen"
+			type="usergroup"
+			label="COM_SIAK_CONFIG_FIELD_GRP_DOSEN_LABEL"
+			description=""
+			required="true"
+			class="input input-large"
+		/>
+
+		<field 
+			name="grpKaprodi"
+			type="usergroup"
+			label="COM_SIAK_CONFIG_FIELD_GRP_KAPRODI_LABEL"
+			description=""
+			required="true"
+			class="input input-large"
+		/>
+		
+
+		<field 
+			name="grpAdmin"
+			type="usergroup"
+			label="COM_SIAK_CONFIG_FIELD_GRP_ADMIN_LABEL"
+			description=""
+			required="true"
+			class="input input-large"
+		/>	
+
+		<field 
+			name="grpKajur"
+			type="usergroup"
+			label="COM_SIAK_CONFIG_FIELD_GRP_KAJUR_LABEL"
+			description=""
+			required="true"
+			class="input input-large"
+		/>		
+
+		<field 
+			name="grpWadek"
+			type="usergroup"
+			label="COM_SIAK_CONFIG_FIELD_GRP_WADEK_LABEL"
+			description=""
+			required="true"
+			class="input input-large"
+		/>	
+
+		<field 
+			name="grpDekan"
+			type="usergroup"
+			label="COM_SIAK_CONFIG_FIELD_GRP_DEKAN_LABEL"
+			description=""
+			required="true"
+			class="input input-large"
+		/>		
+		
+	</fieldset>	
+
+	<fieldset	
+		name="nilai"
+		label="COM_SIAK_CONFIG_PARAMS_NILAI"
+		description="COM_SIAK_CONFIG_PARAMS_NILAI_DESC"
+	>
+		<field 
+			name="minScoreToRemidial"
+			type="number"
+			min="0"
+			max="3"
+			default="2"
+			label="COM_SIAK_CONFIG_FIELD_MIN_SCORE_TO_REMIDIAL_LABEL"
+			description="COM_SIAK_CONFIG_FIELD_MIN_SCORE_TO_REMIDIAL_DESC"
+			required="true"
+			class="input input-large"
+		/>
+	</fieldset>
+
+	<fieldset
+		name="permissions"
+		label="JCONFIG_PERMISSIONS_LABEL"
+		description="JCONFIG_PERMISSIONS_DESC"
+		>
+		<field
+			name="rules"
+			type="rules"
+			label="JCONFIG_PERMISSIONS_LABEL"
+			class="input"
+			validate="rules"
+			filter="rules"
+			component="com_siak"
+			section="component"
+		/>
+	</fieldset>
+</config>

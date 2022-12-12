@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fieldset name="frmNilai">
+        <field 
+            name        = "mahasiswa"
+            type        = "text"
+            label       = "COM_SIAK_MAHASISWA_FIELD_TITLE_LABEL" 
+            description = ""
+            readonly    = "true"
+            class       = "input input-medium"
+        />
+        <field 
+            name        = "npm"
+            type        = "text"
+            label       = "COM_SIAK_FIELD_NPM_LABEL" 
+            description = ""
+            readonly    = "true"
+            class       = "input input-medium"
+        />
+
+        <field 
+            name        = "nilai_final"
+            type        = "radio"
+            label       = "COM_SIAK_FIELD_NILAI_FINAL_LABEL" 
+            description = ""
+            class       = "btn-group btn-group-yesno"
+            default      = "0"
+        >
+            <option value = "0">COM_SIAK_JENIS_NILAI_NORMAL</option>
+            <option value = "1">COM_SIAK_JENIS_NILAI_AKHIR</option>
+        </field>
+
+        <field 
+            name        = "kehadiran"
+            type        = "number"
+            label       = "COM_SIAK_NILAI_FIELD_KEHADIRAN_LABEL"
+            desc        = ""
+            min         = "0"
+            max         = "100"
+            step        = "1"
+            class       = "input input-small"
+            showon      = "nilai_final:0"
+        />
+
+        <field 
+            name        = "tugas"
+            type        = "number"
+            label       = "COM_SIAK_NILAI_FIELD_TUGAS_LABEL"
+            desc        = ""
+            min         = "0"
+            max         = "100"
+            step        = "1"
+            class       = "input input-small"
+            showon      = "nilai_final:0"
+        />
+
+        <field 
+            name        = "uts"
+            type        = "number"
+            label       = "COM_SIAK_NILAI_FIELD_UTS_LABEL"
+            desc        = ""
+            min         = "0"
+            max         = "100"
+            step        = "1"
+            class       = "input input-small"
+            showon      = "nilai_final:0"
+        />
+
+        <field 
+            name        = "uas"
+            type        = "number"
+            label       = "COM_SIAK_NILAI_FIELD_UAS_LABEL"
+            desc        = ""
+            min         = "0"
+            max         = "100"
+            step        = "1"
+            class       = "input input-small"
+            showon      = "nilai_final:0"
+        />
+
+        <field 
+            name        = "nilai_akhir"
+            type        = "number"
+            label       = "COM_SIAK_NILAI_FIELD_NILAI_AKHIR_LABEL"
+            desc        = ""
+            min         = "0"
+            max         = "100"
+            step        = "1"
+            class       = "input input-small"
+            showon      = "nilai_final:1"
+        />
+
+        <field 
+            name        = "nilai_mutu"
+            type        = "number"
+            label       = "COM_SIAK_NILAI_FIELD_NILAI_ANGKA_LABEL"
+            desc        = ""
+            min         = "0"
+            max         = "4"
+            step        = "1"
+            class       = "input input-small"
+            showon      = "nilai_final:1"
+            disabled    = "true"
+        />
+
+        <field 
+            name        = "nilai_angka"
+            type        = "TEXT"
+            label       = "COM_SIAK_NILAI_FIELD_NILAI_BOBOT_LABEL"
+            desc        = ""
+            size         = "1"
+            max         = "1"
+            class       = "input input-small"
+            showon      = "nilai_final:1"
+            disabled    = "true"
+        />
+
+        <field 
+            name        = "dosen"
+            type        = "modal_dosens"
+            label       = "COM_SIAK_FIELD_DOSEN_LABEL"
+            desc        = ""
+            required    = "true"
+            class       = "input input-large"
+        />
+    </fieldset>
+</form>

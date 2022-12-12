@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fields name="filter" addfieldpath="/administrator/components/com_siak/models/fields">
+        <field 
+            name="search"
+            type="text"
+            label="COM_SIAK_FILTER_SEARCH_LABEL"
+            description=""
+            hint="Mata Kuliah / KodeMK"
+        />       
+
+        <field 
+            name = "prodi"
+            type = "prodis"
+            label = "COM_SIAK_JURUSAN"
+            description = ""
+            onchange="this.form.submit();"
+        >
+        <option value="">COM_SIAK_SELECT_JURUSAN</option>
+        </field>
+
+        <field 
+            name = "semester"
+            type = "semesterdinamis"
+            label = "COM_SIAK_SEMESTER"
+            description = ""
+            onchange="this.form.submit();"
+            showon = "prodi!:"
+        >
+        <option value="">COM_SIAK_SELECT_SEMESTER</option>
+        </field>
+
+    </fields>
+
+    <fields name="list">		
+		<field
+			name="limit"
+			type="limitbox"
+			label="COM_CONTENT_LIST_LIMIT"
+			description="COM_CONTENT_LIST_LIMIT_DESC"
+			class="input-medium"
+			default="25"
+			onchange="this.form.submit();"
+		/>
+	</fields>
+</form>

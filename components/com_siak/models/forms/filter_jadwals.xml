@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>    
+        <fields name="filter" addfieldpath="/administrator/components/com_siak/models/fields">
+            <field 
+                name        = "search"
+                type        = "text"
+                label       = "COM_SIAK_FIELD_MATAKULIAH_TITLE"
+                class       = "input input-medium"
+                description = ""
+                onchange    = "this.form.submit();"
+                hint        = "Hari"
+            />
+
+            <field
+                name        = "prodi"
+                type        = "prodi"
+                label       = "COM_SIAK_PRODI_TITLE_LABEL"
+                class       = "input input-medium"
+                description = ""
+                onchange    = "this.form.submit();"
+            >
+                <option value="">JGLOBAL_SELECT_AN_OPTION</option>
+            </field>
+
+            <field
+                name        = "jurusan"
+                type        = "jurusan"
+                label       = "COM_SIAK_JURUSAN_TITLE_LABEL"
+                class       = "input input-large"
+                description = ""
+                onchange    = "this.form.submit();"
+            >
+                <option value="">JGLOBAL_SELECT_AN_OPTION</option>
+            </field>
+
+            <field
+                name        = "semester"
+                type        = "semesterdinamis"
+                label       = "COM_SIAK_SEMESTER_TITLE_LABEL"
+                class       = "input input-medium"
+                description = ""
+                onchange    = "this.form.submit();"
+            >
+                <option value="">JGLOBAL_SELECT_AN_OPTION</option>
+            </field>
+
+            <field
+                name        = "kelas"
+                type        = "kelas"
+                label       = "COM_SIAK_KELAS_TITLE_LABEL"
+                class       = "input input-medium"
+                description = ""
+                onchange    = "this.form.submit();"
+            >
+                <option value="">JGLOBAL_SELECT_AN_OPTION</option>
+            </field>
+
+        </fields>
+
+        <fields name="list">
+            <field
+                name        ="limit"
+                type        ="limitbox"
+                label       ="COM_SIAK_LIST_LIMIT"
+                description =""
+                class       ="input-medium"
+                default     ="25"
+                onchange    ="this.form.submit();"
+            />
+        </fields>
+</form>

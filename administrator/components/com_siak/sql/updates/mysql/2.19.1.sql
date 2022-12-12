@@ -1,0 +1,20 @@
+CREATE TABLE IF NOT EXISTS `#__siak_jadwal_ujian` (
+	`id`			INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`title`  		VARCHAR(30) NOT NULL,
+	`prodi`			TINYINT(4)		UNSIGNED	NOT NULL,
+	`jurusan`		TINYINT(4)		UNSIGNED	NOT NULL,
+	`kelas`			TINYINT(4)		UNSIGNED	NOT NULL,
+	`semester`		TINYINT(4)		UNSIGNED	NOT NULL,
+	`tahun_ajaran`	 VARCHAR(10) 	NULL DEFAULT NULL,
+	`matakuliah`	SMALLINT(5)		UNSIGNED		NOT NULL,
+	`dosen` 		INT(10) 		NOT NULL DEFAULT 0,
+	`pengawas` 		INT(10) 		NOT NULL DEFAULT 0,
+	`tanggal`		DATE			NOT NULL DEFAULT '0000-00-00',
+	`jam_mulai`		VARCHAR(20) 	NOT NULL DEFAULT '00:00:00',
+	`jam_akhir`		VARCHAR(20) 	NOT NULL DEFAULT '00:00:00',
+	`ruangan`		TINYINT(4)		UNSIGNED	NOT NULL,
+	`input_by` 		INT(10) 		NOT NULL DEFAULT 0,
+	`input_time` 	DATETIME 	NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	`state`			TINYINT(4)		NOT NULL default 0,
+	PRIMARY KEY(`id`)			 
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 DEFAULT COLLATE=utf8mb4_unicode_ci;

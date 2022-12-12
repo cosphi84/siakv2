@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fields name="filter">
+        <field  
+            name        = "search"
+            type        = "semestertranskip"
+            label       = "COM_SIAK_FILTER_SEARCH_LABEL"
+            description = ""
+            hint        = "Semester"
+            multiple    = "true"
+        >
+        </field>              
+    </fields>
+</form>

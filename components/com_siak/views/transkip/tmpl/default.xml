@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="COM_SIAK_VIEW_TRANTRANSKIPIP_DEFAULT_TITLE" option="COM_SIAK_VIEW_TRANSKIP_DEFAULT_OPTION">
+		
+		<message>
+			<![CDATA[COM_SIAK_TRANSKIP_DEFAULT_DESC]]>
+		</message>
+	</layout>
+</metadata>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fieldset name="frmFilter"
+        addfieldpath="/administrator/components/com_siak/models/fields">
+        <fields name="filter">
+            <field 
+                name        = "search"
+                type        = "modal_matakuliah"
+                label       = "COM_SIAK_FIELD_MATAKULIAH_TITLE"
+                class       = "input input-medium"
+                description = ""
+                onchange    = "this.form.submit();"
+            />
+
+            <field
+                name        = "kelas"
+                type        = "kelas"
+                label       = "COM_SIAK_KELAS_TITLE_LABEL"
+                class       = "input input-medium"
+                description = ""
+                onchange    = "this.form.submit();"
+            >
+                <option value="">JGLOBAL_SELECT_AN_OPTION</option>
+            </field>
+
+            <field 
+                name        = "ta"
+                type        = "ta"
+                label       = "COM_SIAK_TA_TITLE_LABEL"
+                description = ""
+                onchange    = "this.form.submit();"
+                >
+                    <option value="">JGLOBAL_SELECT_AN_OPTION</option>
+            </field>
+        </fields>
+
+        <fields name="list">
+            <field
+                name        ="limit"
+                type        ="limitbox"
+                label       ="COM_SIAK_LIST_LIMIT"
+                description =""
+                class       ="input-medium"
+                default     ="25"
+                onchange    ="this.form.submit();"
+            />
+        </fields>
+    </fieldset>
+</form>

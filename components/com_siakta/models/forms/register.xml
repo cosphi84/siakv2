@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+    <fieldset
+        name    = "frmRegistrasi">
+
+        <field 
+            name        = "mahasiswa_id"
+            type        = "hidden"
+            label       = "COM_SIAKTA_FIELD_MAHASISWA_ID_LABEL"
+        />
+
+        <field 
+            name        = "prodi_id"
+            type        = "listprodi"
+            label       = "COM_SIAKTA_FIELD_PRODI_ID_LABEL"
+            required    = "true"
+            class       = "input input-large"
+        >
+        <option value="">COM_SIAKTA_OPTION_SELECT_PRODI</option>
+        </field>
+
+        <field 
+            name        = "konsentrasi_id"
+            type        = "listkonsentrasi"
+            label       = "COM_SIAKTA_FIELD_KONSENTRASI_ID_LABEL"
+            required    = "true"
+            class       = "input input-xlarge"
+        >
+        <option value="">COM_SIAKTA_OPTION_SELECT_KONSENTRASI</option>
+        </field>
+
+        <field 
+            name        = "tahun"
+            type        = "number"
+            label       = "JYEAR"
+            class       = "input input-medium"
+            min         = "2020"
+            max         = "2090"
+            step        = "1"
+            required    = "true"
+            hint        = "2020"
+        />
+
+        <field 
+            name        = "title"
+            type        = "textarea"
+            label       = "COM_SIAKTA_FIELD_JUDUL_LABEL"
+            cols        = "50"
+            rows        = "5"
+            class       = "input input-xlarge"
+            hint        = "Judul TA yang akan di ajukan"
+            onchange     = "let p=this.selectionStart;this.value=this.value.toUpperCase();this.setSelectionRange(p, p);"
+            required    = "true"
+        />
+
+    </fieldset>
+</form>

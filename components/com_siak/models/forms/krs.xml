@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fieldset name="frmKrs" 
+        label="COM_SIAK_KRS_LEGEND" 
+        addfieldpath="/administrator/components/com_siak/models/fields">
+
+            <field 
+                name        = "nama"
+                type        = "text"
+                label       = "COM_SIAK_FIELD_NAMA_TITLE"
+                description = ""
+                readonly    = "true"
+                class       = "input input-medium"
+            />
+
+            <field  
+                name        = "npm"
+                type        = "text"
+                label       = "COM_SIAK_FIELD_NPM_TITLE"
+                description = ""
+                readonly    = "true"
+                class       = "input input-medium"
+            />
+
+            <field 
+                name        = "prodi"
+                type        = "prodi"
+                label       = "COM_SIAK_PRODI_TITLE_LABEL"
+                description = ""
+                required    = "true"
+                class       = "input input-medium"
+            >
+                <option select ="">COM_SIAK_SELECT_PRODI</option>
+            </field>
+
+            <field
+                name        = "jurusan"
+                type        = "jurusan"
+                label       = "COM_SIAK_JURUSAN_TITLE_LABEL"
+                description = ""
+                required    = "true"
+                class       = "input input-medium"
+            >
+                <option value="">COM_SIAK_SELECT_JURUSAN</option>
+            </field>
+
+            <field
+                name        = "kelas"
+                type        = "kelas"
+                label       = "COM_SIAK_KELAS_TITLE_LABEL"
+                description = ""
+                required    = "true"
+                class       = "input input-medium"
+            >
+                <option value="">COM_SIAK_SELECT_KELAS</option>
+            </field>
+
+            <field
+                name        = "semester"
+                label       = "COM_SIAK_FIELD_SEMESTER_LABEL"
+                type        = "semester"
+                description = ""
+                class       = "input input-large"
+                required    = "true"
+            >
+                <option value="">COM_SIAK_SELECT_SEMESTER</option>
+            </field>
+
+            <field  
+                name        = "tahun_ajaran"
+                type        = "ta"
+                label       = "COM_SIAK_TA_TITLE_LABEL"
+                description = ""
+                class       = "input input-medium"
+                required    = "true"
+            >
+                <option value = "">COM_SIAK_SELECT_TA</option>
+            </field>
+
+            <field 
+                name        = "jenisMhs"
+                type        = "hidden"
+                label       = "COM_SIAK_KRS_JENIS_MHS"
+            />            
+    </fieldset>
+
+    <fieldset name="ttlSKS">
+        <field 
+            name            = "ttl_sks"
+            type            = "text"
+            label           = "COM_SIAK_JUMLAH_SKS"
+            description     = ""
+            readonly        = "true"
+        />
+    </fieldset>
+    
+    <fieldset name="statusKRS">
+        <field 
+            name            = "confirm_dw"
+            type            = "list"
+            label           = "COM_SIAK_KRS_STATUS_KIRIM"
+            class           = "input input-medium"
+            required        = "true"
+        >
+            <option value="">JGLOBAL_SELECT_AN_OPTION</option>
+            <option value="0">COM_SIAK_KRS_FLAG_FINAL</option>
+            <option value="-1">COM_SIAK_KRS_FLAG_DRAFT</option>
+        </field>
+    </fieldset>
+
+    <fieldset name = "frmKrsDosWal">
+        <field
+            name        = "confirm_dw"
+            type        = "radio"
+            label       = "COM_SIAK_KRS_KONFIRM_DW_FIELD_LABEL"
+            description = ""
+            class       = "btn-group btn-group-yesno"
+        >
+            <option value = "2">COM_SIAK_OPTION_SETUJU</option>
+            <option value = "-2">COM_SIAK_OPTION_REVISI</option>
+        </field>
+
+        <field
+            name        = "confirm_note"
+            type        = "text"
+            label       = "COM_SIAK_KRS_REVISI_NOTE_LABEL"
+            description = ""
+            class       = "input input-xxlarge"
+            showon      = "confirm_dw:-2"
+        />
+    </fieldset>
+</form>
+            

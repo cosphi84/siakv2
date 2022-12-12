@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fieldset name="frmSp">
+        <field 
+            name        = "nilai_id"
+            type        = "modal_nilai"
+            label       = "COM_SIAK_REMIDI_FIELD_NILAI_LABEL"
+            description = ""
+            required    = "true"
+            class       = "input input-large"
+        />
+    </fieldset>
+</form>
+            

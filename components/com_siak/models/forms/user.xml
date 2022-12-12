@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fieldset name="frmUser">
+             
+
+        <field 
+            name        = "angkatan"
+            type        = "number"
+            label       = "COM_SIAK_WALIS_FIELD_ANGKATAN_LABEL"
+            description = ""
+            class       = "input input-small"
+            required    = "true"
+            min         = "2000"
+            hint        = "YYYY"
+        />
+
+        <field
+            name        = "tipe_user"
+            type        = "jenisuser"
+            label       = "COM_SIAK_BIODATA_TIPE_USER_LABEL"
+            description = ""
+            class       = "input input-medium"
+            required    = "true"
+        >
+        <option value="">COM_SIAK_BIODATA_SELECT_OPTION</option>
+        </field>
+
+        <field 
+            name        = "no_ktp"
+            type        = "text"
+            label       = "COM_SIAK_USER_FIELD_NO_KTP_LABEL"
+            description = ""
+            class       = "input input-large"
+            required    = "false"
+            hint        = "16 Digit no KTP"
+            pattern     = "[0-9].{15,}"
+        />
+
+        <field 
+            name        = "nidn"
+            type        = "text"
+            label       = "COM_SIAK_USER_FIELD_NO_NIDN_LABEL"
+            description = ""
+            class       = "input input-large"
+            required    = "true"
+            hint        = "Nomer Induk Dosen Nasional"
+        />
+
+        <field 
+            name        = "nik"
+            type        = "text"
+            label       = "COM_SIAK_USER_FIELD_NIK_LABEL"
+            description = ""
+            class       = "input input-medium"
+            required    = "true"
+            hint        = "Nomer Induk Karyawan"
+        />
+
+        <field  
+            name        = "pob"
+            type        = "text"
+            label       = "COM_SIAK_USER_FIELD_POB_LABEL"
+            description = ""
+            class       = "input input-large"
+            required    = "true"
+            hint        = "Kab / Kota tempat kelahiran"
+        />
+
+        <field  
+            name        = "dob"
+            type        = "calendar"
+            label       = "COM_SIAK_USER_FIELD_DOB_LABEL"
+            description = ""
+            class       = "input input-medium"
+            required    = "true"
+            showtime    = "false"
+            todaybutton = "false"
+            filltable   = "true"
+            filter      = "none"
+            hint        = "YYYY-mm-dd"
+        />
+
+        <field  
+            name        = "jenis_kelamin"
+            type        = "list"
+            label       = "COM_SIAK_USER_FIELD_JENIS_KELAMIN_LABEL"
+            description = ""
+            class       = "input input-medium"
+            required    = "true"
+        >
+        <option value = "">JGLOBAL_SELECT_AN_OPTION</option>
+        <option value = "LAKI LAKI">COM_SIAK_USER_FIELD_LAKI_LAKI_LABEL</option>
+        <option value = "PEREMPUAN">COM_SIAK_USER_FIELD_PEREMPUAN_LABEL</option>
+        </field>
+
+        <field
+            name        = "status_sipil"
+            type        = "list"
+            label       = "COM_SIAK_USER_FIELD_STATUS_SIPIL_LABEL"
+            description = ""
+            class       = "input input-medium"
+            required    = "true"
+        >
+        <option value = "">JGLOBAL_SELECT_AN_OPTION</option>
+        <option value = "Single">COM_SIAK_USER_FIELD_SINGLE_LABEL</option>
+        <option value = "Menikah">COM_SIAK_USER_FIELD_MENIKAH_LABEL</option>
+        </field>
+
+        <field 
+            name        = "agama"
+            type        = "text"
+            label       = "COM_SIAK_USER_FIELD_AGAMA_LABEL"
+            description = ""
+            class       = "input input-medium"
+            onchange    = "this.value = this.value.toUpperCase();"
+            required    = "true"
+        />
+
+        <field  
+            name        = "tanggal_masuk"
+            type        = "calendar"
+            label       = "COM_SIAK_USER_FIELD_TANGGAL_MASUK_LABEL"
+            description = ""
+            class       = "input input-medium"
+            required    = "false"
+            showtime    = "false"
+            filter      = "user_utc"
+            todaybutton = "false"
+            filltable   = "true"
+            translateformat="true"
+            hint        = "YYYY-mm-dd"
+        />
+
+       <field  
+            name        = "alamat_1"
+            type        = "text"
+            label       = "COM_SIAK_USER_FIELD_ALAMAT_LINE_1_LABEL"
+            description = ""
+            class       = "input input-xxlarge"
+            required    = "true"
+            hint        = "Alamat Tempat Tinggal"
+            size        = "50"
+            maxlength   = "50"        
+        />
+
+        <field  
+            name        = "alamat_2"
+            type        = "text"
+            label       = "COM_SIAK_USER_FIELD_ALAMAT_LINE_2_LABEL"
+            description = ""
+            class       = "input input-xxlarge"
+            required    = "false"
+            size        = "50"
+            maxlength   = "50" 
+        />
+
+        <field  
+            name        = "kelurahan"
+            type        = "text"
+            label       = "COM_SIAK_USER_FIELD_KELURAHAN_LABEL"
+            description = ""
+            class       = "input input-medium"
+            required    = "true"
+            size        = "50"
+            maxlength   = "50" 
+        />
+
+        <field  
+            name        = "kecamatan"
+            type        = "text"
+            label       = "COM_SIAK_USER_FIELD_KECAMATAN_LABEL"
+            description = ""
+            class       = "input input-medium"
+            required    = "true"
+            size        = "50"
+            maxlength   = "50" 
+        />
+
+        <field  
+            name        = "kabupaten"
+            type        = "text"
+            label       = "COM_SIAK_USER_FIELD_KABUPATEN_LABEL"
+            description = ""
+            class       = "input input-medium"
+            required    = "true"
+            size        = "50"
+            maxlength   = "50" 
+        />
+
+        <field  
+            name        = "propinsi"
+            type        = "text"
+            label       = "COM_SIAK_USER_FIELD_PROPINSI_LABEL"
+            description = ""
+            class       = "input input-medium"
+            required    = "true"
+            size        = "50"
+            maxlength   = "50" 
+        />
+
+        <field  
+            name        = "kode_pos"
+            type        = "text"
+            label       = "COM_SIAK_USER_FIELD_KODEPOS_LABEL"
+            description = ""
+            class       = "input input-small"
+            required    = "true"
+            size        = "5"
+            maxlength   = "5" 
+            pattern     = "[0-9].{4,}"
+        />
+
+        <field  
+            name        = "telepon"
+            type        = "text"
+            label       = "COM_SIAK_USER_FIELD_TELEPON_LABEL"
+            description = ""
+            class       = "input input-medium"
+            required    = "true"
+            size        = "15"
+            maxlength   = "15" 
+            pattern     = "[0-9].{7,}"
+        />
+
+        <field  
+            name        = "foto"
+            type        = "file"
+            label       = "COM_SIAK_USER_FIELD_FOTO_LABEL"
+            description = ""
+            class       = "input input-medium"
+            required    = "false"
+            accept      = ".jpg, .jpeg, .png"
+            hint        = "Hanya format gambar JPG, JPEG, dan PNG saja!"
+        />
+        
+    </fieldset>
+</form>

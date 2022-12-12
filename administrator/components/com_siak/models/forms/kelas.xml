@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fieldset name="frmKelas">
+        <field 
+            name        = "title"
+            type        = "text"
+            label       = "COM_SIAK_KELAS_FIELD_TITLE_LABEL"
+            description = ""
+            required    = "true"
+            class       = "input input-small"
+            autofocus   = "true"
+        />
+
+        <field 
+            name        = "alias"
+            type        = "text"
+            label       = "COM_SIAK_FIELD_ALIAS_LABEL"
+            description = ""
+            required    = "true"
+            class       = "input input-xxlarge"
+        />
+
+       
+        
+    </fieldset>
+</form>
+

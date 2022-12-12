@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+    <fields name="filter">
+        <field 
+            name    = "search"
+            type    = "text"
+            label   = "JSEARCH_FILTER_LABEL"
+            hint    = "NPM, Mahasiswa, Judul"
+        />
+
+		<field 
+			name = "prodi"
+			type = "listprodi"
+			label = "COM_SIAKTA_SELECT_PRODI"
+			onchange = "this.form.submit();"
+		>
+			<option value="">COM_SIAKTA_SELECT_PRODI_VALUE</option>
+		</field>
+
+		<field 
+			name = "konsentrasi"
+			type = "listkonsentrasi"
+			label = "COM_SIAKTA_SELECT_PRODI"
+			onchange = "this.form.submit();"
+		>
+			<option value="">COM_SIAKTA_SELECT_KONSENTRASI_VALUE</option>
+		</field>
+		<field
+			name="published"
+			type="status"
+			label="JOPTION_SELECT_PUBLISHED"
+			description="JOPTION_SELECT_PUBLISHED_DESC"
+			onchange="this.form.submit();"
+			>
+			<option value="">JOPTION_SELECT_PUBLISHED</option>
+		</field>
+    </fields>
+    <fields name="list">
+        <field
+			name="fullordering"
+			type="list"
+			label="JSEARCH_TOOLS_ORDERING"
+			description=""
+			onchange="this.form.submit();"
+			default="a.id DESC"
+			>
+			<option value="">JGLOBAL_SORT_BY</option>
+			<option value="d.name ASC">COM_SIAKTA_MAHASISWA_ASC</option>
+			<option value="d.name DESC">COM_SIAKTA_MAHASISWA_DESC</option>
+			<option value="d.username ASC">COM_SIAKTA_NPM_ASC</option>
+			<option value="d.username DESC">COM_SIAKTA_NPM_DESC</option>
+			<option value="b.prodi ASC">COM_SIAKTA_PRODI_ASC</option>
+			<option value="b.prodi DESC">COM_SIAKTA_PRODI_DESC</option>
+			<option value="a.tahun ASC">COM_SIAKTA_TAHUN_ASC</option>
+			<option value="a.tahun DESC">COM_SIAKTA_TAHUN_DESC</option>
+			<option value="a.id DESC">JGRID_HEADING_ID_DESC</option>
+			<option value="a.id ASC">JGRID_HEADING_ID_ASC</option>
+			
+            
+			
+		</field>	
+		<field
+			name="limit"
+			type="limitbox"
+			label="COM_CONTENT_LIST_LIMIT"
+			description="COM_CONTENT_LIST_LIMIT_DESC"
+			class="input-medium"
+			default="20"
+			onchange="this.form.submit();"
+		/>
+	</fields>
+</form>

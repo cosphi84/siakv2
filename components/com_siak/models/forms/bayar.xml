@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fieldset
+        name="frmBayar"
+        label="COM_SIAK_FORM_KONFIRMASI_PEMBAYARAN" 
+        addfieldpath="/administrator/components/com_siak/models/fields">
+
+        <field
+            name        = "no_ref"
+            type        = "text"
+            label       = "COM_SIAK_BAYAR_FIELD_NO_REF_TITLE"
+            description = "COM_SIAK_BAYAR_FIELD_NO_REF_DESC"
+            class       = "input input-xxlarge"
+            hint        = "No Kuitansi atu No Resi Slip Transfer"
+            required    = "true"
+            autofocus   = "true"
+            maxlenght   = "50"
+        />
+             
+        <field  
+            name        = "pembayaran"
+            type        = "jenisbayar"
+            label       = "COM_SIAK_BAYAR_FIELD_PEMBAYARAN_TITLE"
+            description = ""
+            class       = "input input-medium"
+            required    = "true"
+        >
+            <option value="">COM_SIAK_FIELD_BAYARAN_SELECT_OTION</option>
+        </field>
+
+        <field 
+            name        = "matakuliah"
+            type        = "modal_matakuliah"
+            label       = "COM_SIAK_MATKUL_FIELD_NAMA_LABEL"
+            description = ""
+            class       = "input input-medium"
+            showon      = "pembayaran:PRAKTIKUM"
+        />
+        
+        <field
+            name        = "semester"
+            type        = "semester"
+            label       = "COM_SIAK_FIELD_SEMESTER_LABEL"
+            class       = "input input-medium"
+            description = ""
+            required    = "true"
+        >
+            <option value = "">COM_SIAK_SELECT_SEMESTER </option>
+        </field>
+
+        <field 
+            name        = "ta"
+            type        = "ta"
+            label       = "COM_SIAK_TA_TITLE_LABEL"
+            description = ""
+            class       = "input input-medium"
+            required    = "true"
+        >
+        <option value = "">COM_SIAK_SELECT_TA</option>
+        </field>
+
+        <field
+            name        = "jumlah"
+            type        = "number"
+            label       = "COM_SIAK_BAYAR_FIELD_JUMLAH_TITLE"
+            required    = "true"
+            min         = "100000"
+            description = ""
+        />
+
+        <field  
+            name        = "tipe_bayar"
+            type        = "tipebayar"
+            label       = "COM_SIAK_BAYAR_FIELD_TIPE_BAYAR_TITLE"
+            description = ""
+            class       = "input input-medium"
+            required    = "true"
+        >
+            <option value="">COM_SIAK_BAYAR_TIPE_BAYAR_SELECT_OPTION</option>
+        </field>
+
+        <field
+            name        = "tanggal_bayar"
+            type        = "calendar"
+            label       = "COM_SIAK_BAYAR_FIELD_TANGGAL_BAYAR_TITLE"
+            description = ""
+            class       = "input input-medium"
+            required    = "true"
+            default     = "now"
+        /> 
+
+        <field  
+            name        = "kuitansi"
+            type        = "file"
+            label       = "COM_SIAK_BAYAR_FIELD_KUITANSI_TITLE"
+            description = "COM_SIAK_BAYAR_FIELD_KUITANSI_DESC"
+            accept      = "image/*"
+        />
+    </fieldset>
+</form>

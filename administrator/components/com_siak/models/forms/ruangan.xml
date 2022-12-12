@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fieldset name="frmRuangan">
+        
+        <field  
+            name="title"
+            type="text"
+            label="COM_SIAK_RUANGAN_FIELD_TITLE_LABEL"
+            class="input input-medium"
+            required="true"
+            autofocus="true"
+        />
+
+        <field  
+            name="alias"
+            type="text"
+            label="COM_SIAK_FIELD_ALIAS_LABEL"
+            class="input input-medium"
+            required="true"
+        />
+
+        <field  
+            name="note"
+            type="text"
+            label="JFIELD_NOTE_DESC"
+            class="input input-xxlarge"
+        />
+    </fieldset>
+</form>
+

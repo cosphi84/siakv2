@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fieldset name="frmMahasiswa">
+        <field 
+            name        = "user_id"
+            type        = "user"
+            label       = "COM_SIAK_MAHASISWA_FIELD_TITLE_LABEL"
+            description = ""
+            required    = "true"
+            class       = "input input-medium"
+            autofocus   = "true"
+        />
+
+        <field 
+            name        = "prodi"
+            type        = "prodis"
+            label       = "COM_SIAK_PRODI_FIELD_TITLE_LABEL"
+            description = ""
+            required    = "true"
+            class       = "input input-medium"
+        >
+        <option value="">JGLOBAL_SELECT_AN_OPTION</option>
+        </field>
+
+        <field 
+            name        = "jurusan"
+            type        = "jurusanstatis"
+            label       = "COM_SIAK_JURUSAN_FIELD_TITLE_LABEL"
+            description = ""
+            required    = "true"
+            class       = "input input-medium"
+        >
+        <option value="">JGLOBAL_SELECT_AN_OPTION</option>
+        </field>
+
+        <field 
+            name        = "kelas"
+            type        = "kelas"
+            label       = "COM_SIAK_KELAS_FIELD_TITLE_LABEL"
+            description = ""
+            required    = "true"
+            class       = "input input-medium"
+        >
+        <option value="">JGLOBAL_SELECT_AN_OPTION</option>
+        </field>
+
+        <field 
+            name        = "semester"
+            type        = "modal_semesters"
+            label       = "COM_SIAK_SEMESTER_FIELD_TITLE_LABEL"
+            description = ""
+            required    = "true"
+            class       = "input input-medium"
+        >       
+        >
+        <option value="">JGLOBAL_SELECT_AN_OPTION</option>
+        </field>
+
+        <field 
+            name        = "ta"
+            type        = "ta"
+            label       = "COM_SIAK_FIELD_TAHUN_AJARAN_LABEL"
+            description = ""
+            required    = "true"
+            class       = "input input-medium"
+        >       
+        >
+        <option value="">JGLOBAL_SELECT_AN_OPTION</option>
+        </field>
+        
+        <field 
+            name        = "status"
+            type        = "statusmahasiswa" 
+            label       = "COM_SIAK_MAHASISWA_FIELD_STATUS_LABEL"
+            description = ""
+            required    = "true"
+            class       = "input input-medium"
+        >       
+        >
+        <option value="">JGLOBAL_SELECT_AN_OPTION</option>
+        </field>
+
+        <field 
+            name        = "confirm"
+            type        = "radio" 
+            label       = "COM_SIAK_CONFIRM"
+            description = ""
+            required    = "true"
+            class       = "btn-group btn-group-yesno "
+        >       
+        >
+        <option value="0">JNO</option>
+        <option value="1">JYES</option>
+        </field>
+        
+    </fieldset>
+</form>
+

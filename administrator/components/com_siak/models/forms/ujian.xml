@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fieldset name="frmUjian">
+        <field  
+            name        = "title"
+            type        = "jenis_ujian"
+            label       = "JCATEGORY"
+            description = ""
+            required    = "true"
+            class       = "input input-medium"
+            autofocus   = "true"
+        >
+        <option value="">JGLOBAL_CHOOSE_CATEGORY_LABEL</option>
+        
+        </field>
+
+        <field  
+            name        = "prodi"
+            type        = "prodis"
+            label       = "COM_SIAK_PRODI_FIELD_TITLE_LABEL"
+            description = ""
+            required    = "true"
+            class       = "input input-medium"
+        >
+        <option value="">COM_SIAK_OPTION_SELECT_PRODI</option>
+        </field>
+
+        <field  
+            name        = "jurusan"
+            type        = "jurusanstatis"
+            label       = "COM_SIAK_JURUSAN_FIELD_TITLE_LABEL"
+            description = ""
+            required    = "true"
+            class       = "input input-medium"
+        >
+        <option value="">COM_SIAK_SELECT_JURUSAN</option>
+        </field>
+        
+
+        <field  
+            name        = "kelas"
+            type        = "kelas"
+            label       = "COM_SIAK_KELAS_FIELD_TITLE_LABEL"
+            description = ""
+            required    = "true"
+            class       = "input input-large"
+        >
+        <option value="">COM_SIAK_SELECT_KELAS</option>
+        </field>
+
+        <field  
+            name        = "semester"
+            type        = "modal_semesters"
+            label       = "COM_SIAK_SEMESTER_FIELD_TITLE_LABEL"
+            description = ""
+            required    = "true"
+            class       = "input input-medium"
+        />
+
+        <field  
+            name        = "tahun_ajaran"
+            type        = "ta"
+            label       = "COM_SIAK_FIELD_TAHUN_AJARAN_LABEL"
+            description = ""
+            class       = "input input-medium"
+            required    = "true"
+        >
+        <option value="">COM_SIAK_SELECT_TA</option>
+        </field>
+
+        <field  
+            name        = "matakuliah"
+            type        = "modal_matakuliah"
+            label       = "COM_SIAK_MATKUL_FIELD_NAMA_LABEL"
+            description = ""
+            required    = "true"
+            class       = "input input-xlarge"
+        />
+
+        <field  
+            name        = "pengawas"
+            type        = "modal_dosens"
+            label       = "COM_SIAK_VIEW_UJIANS_FIELD_PENGAWAS_LABEL"
+            description = ""
+            required    = "true"
+            class       = "input input-xlarge"
+        />
+
+        <field  
+            name        = "tanggal"
+            type        = "calendar"
+            label       = "JDATE"
+            description = ""
+            required    = "true"
+            class       = "input input-medium"
+        />
+
+        <field  
+            name        = "jam_mulai"
+            type        = "text"
+            label       = "COM_SIAK_VIEW_UJIANS_FIELD_JAM_MULAI_LABEL"
+            description = ""
+            class       = "input input-medium"
+            hint        = "00:00"
+        />
+
+        <field  
+            name        = "jam_akhir"
+            type        = "text"
+            label       = "COM_SIAK_VIEW_UJIANS_FIELD_JAM_SELESAI_LABEL"
+            description = ""
+            class       = "input input-medium"
+            hint        = "00:00"
+        />
+
+        <field  
+            name        = "ruangan"
+            type        = "modal_ruangans"
+            label       = "COM_SIAK_MENUITEM_SELECT_RUANGAN"
+            description = ""
+            class       = "input input-medium"
+            required    = "true"
+        />
+
+        <field
+			name        = "state"
+			type        = "list"
+			label       = "JSTATUS"
+			description = "JFIELD_PUBLISHED_DESC"
+			class       = "chzn-color-state"
+			filter      = "intval"
+			size        = "1"
+			default = "1"
+			>
+			<option value="1">JPUBLISHED</option>
+			<option value="0">JUNPUBLISHED</option>
+			<option value="2">JARCHIVED</option>
+			<option value="-2">JTRASHED</option>
+		</field>
+    </fieldset>
+</form>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form addfieldpath="">
+    <fieldset name = "details">
+        <field 
+            name = "id"
+            type = "hidden"
+            label = "COM_SIAKNILAI_FIELD_ID"
+        />
+
+        <field 
+            name        = "tahun_ajaran"
+            type        = "listTa"
+            label       = "COM_SIAKNILAI_FIELD_TAHUN_AKADEMIK_LABEL"
+            required    = "true"
+            rule        ="tahunakademik"
+        >
+            <option value="">COM_SIAKNILAI_SELECT_TAHUN_AKADEMIK_VALUE</option>
+        </field>
+
+        <field 
+            name        = "user_id"
+            type        = "listmahasiswa"
+            label       = "COM_SIAKNILAI_FIELD_MAHASISWA_LABEL"
+            required    = "true"
+        >
+        <option value = "">COM_SIAKNILAI_SELECT_MAHASISWA_VALUE</option>
+        </field>
+
+        <field 
+            name        = "dosen"
+            type        = "listdosen"
+            label       = "COM_SIAKNILAI_FIELD_DOSEN_LABEL"
+            required    = "true"
+        >
+            <option value="">COM_SIAKNILAI_SELECT_DOSEN_VALUE</option>
+        </field>
+
+        <field 
+            name        = "matakuliah"
+            type        = "listmatakuliah"
+            label       = "COM_SIAKNILAI_FIELD_MATAKULIAH_LABEL"
+            required    = "true"
+        >
+            <optiion value = "">COM_SIAKNILAI_SELECT_MATAKULIAH_VALUE</optiion>
+        </field>
+    </fieldset>
+    <fieldset 
+        name = "nilai" 
+        label="COM_SIAK_FRM_NILAI_ITEM_NILAI_LABEL" 
+        description="COM_SIAK_FRM_NILAI_ITEM_NILAI_DESCRIPTION"> 
+        <field
+            name        = "nilai_final"
+            type        = "radio"
+            label       = "COM_SIAKNILAI_FIELD_NILAI_FINAL_LABEL"
+            required    = "true"
+            default     = "0"
+            class       = "btn-group btn-group-yesno"
+            >
+            <option value = "1">JYES</option>
+            <option value = "0">JNO</option>
+        </field>
+
+        <field 
+            name        = "kehadiran"
+            type        = "number"
+            default     = "0"
+            label       = "COM_SIAKNILAI_FIELD_KEHADIAN_LABEL"
+            min         = "0"
+            max         = "100"
+            step        = "0.5"
+            rule        = "Number"
+            showon      = "nilai_final:0"
+        />
+
+        <field 
+            name        = "tugas"
+            type        = "number"
+            default     = "0"
+            label       = "COM_SIAKNILAI_FIELD_TUGAS_LABEL"
+            min         = "0"
+            max         = "100"
+            step        = "0.5"
+            rule        = "Number"
+            showon      = "nilai_final:0"
+        />
+
+        <field 
+            name        = "uts"
+            type        = "number"
+            default     = "0"
+            label       = "COM_SIAKNILAI_FIELD_UTS_LABEL"
+            min         = "0"
+            max         = "100"
+            step        = "0.5"
+            rule        = "Number"
+            showon      = "nilai_final:0"
+        />
+
+        <field 
+            name        = "uas"
+            type        = "number"
+            default     = "0"
+            label       = "COM_SIAKNILAI_FIELD_UAS_LABEL"
+            min         = "0"
+            max         = "100"
+            step        = "0.5"
+            rule        = "Number"
+            showon      = "nilai_final:0"
+        />
+
+        <field 
+            name        = "nilai_akhir"
+            type        = "number"
+            default     = "0"
+            label       = "COM_SIAKNILAI_FIELD_NILAI_AKHIR_LABEL"
+            min         = "0"
+            max         = "100"
+            step        = "0.5"
+            rule        = "Number"
+        />
+
+        <field 
+            name        = "nilai_angka"
+            type        = "text"
+            default     = "E"
+            label       = "COM_SIAKNILAI_FIELD_NILAI_ANGKA_LABEL"
+        />
+
+        <field 
+            name        = "nilai_mutu"
+            type        = "number"
+            default     = "0"
+            label       = "COM_SIAKNILAI_FIELD_TUGAS_LABEL"
+            min         = "0"
+            max         = "4"
+            step        = "1"
+            rule        = "Number"
+        />
+        
+        
+
+    </fieldset>
+</form>

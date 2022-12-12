@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fieldset name="frmRevisiNilai">
+        <field 
+            name        = "nilai_id"
+            type        = "modal_nilai"
+            label       = "COM_SIAK_FIELD_MATAKULIAH_TITLE"
+            required    = "true"
+            description = ""
+            class       = "input input-medium"
+        />
+
+        <field 
+            name        = "jenis_nilai"
+            type        = "jenis_nilai"
+            label       = "COM_SIAK_FIELD_JENIS_NILAI_LABEL"
+            required    = "true"
+            description = ""
+            class       = "input input-medium"
+        >
+            <option value = "">COM_SIAK_SELECT_JENIS_NILAI_OPTION</option>
+        </field>
+
+        <field  
+            name        = "nilai_input"
+            type        = "number"
+            label       = "COM_SIAK_REVISI_NILAI_FIELD_NILAI_INPUT_LABEL"
+            required    = "true"
+            description = ""
+            class       = "input input-small"
+            min         = "0"
+            max         = "100"
+            step        = "0.5"
+        />
+
+        <field  
+            name        = "nilai_ok"
+            type        = "number"
+            label       = "COM_SIAK_REVISI_NILAI_FIELD_NILAI_OK_LABEL"
+            required    = "true"
+            description = ""
+            class       = "input input-small"
+            min         = "0"
+            max         = "100"
+            step        = "0.5"
+        />
+
+        <field 
+            name        = "alasan"
+            type        = "text"
+            label       = "COM_SIAK_REVISI_FIELD_ALASAN_LABEL"
+            description = ""
+            class       = "input input-xxlarge"
+        />
+    </fieldset>
+</form>

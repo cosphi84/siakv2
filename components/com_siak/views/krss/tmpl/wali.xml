@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="COM_SIAK_KRSS_WALI_TITLE" option="COM_SIAK_KRSS_WALI_OPTION">
+		
+		<message>
+			<![CDATA[COM_SIAK_KRSS_WALI_DESC]]>
+		</message>
+	</layout>
+</metadata>
